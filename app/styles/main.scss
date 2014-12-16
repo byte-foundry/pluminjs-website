@@ -1,0 +1,60 @@
+$white: #fff;
+$black: #000;
+$grey60: #666;
+$grey40: #999;
+$pink: #ff725e;
+$darkpink: #cc5b4b;
+
+body{
+    background-color: $grey40;
+    height: 2000px;
+}
+
+#header{
+    position: fixed;
+    background-color: $white;
+}
+
+#home{
+    background: linear-gradient($pink, $darkpink);
+    color: $white;
+}
+
+#desc{
+    background: $white;
+}
+
+.wrapper{
+    width: 1024px;
+}
+
+.logo{
+    height: 60px;
+    width: 250px;
+    background-image: url(../img/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;    
+}
+
+.mt30{
+    margin-top: 30px;    
+}
+
+.nav a{
+    text-decoration: none;
+    color: $grey40;
+}
+
+.nav a:hover{
+    color: $grey60;
+}
+
+h1{
+    padding-top: 200px;
+    margin: 0;
+}
+
+h2{
+    font-size: 1.2em;
+    font-weight: normal;
+}

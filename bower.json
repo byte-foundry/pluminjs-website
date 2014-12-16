@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-    "knacss": "~3.1.0",
     "prism": "gh-pages",
     "plumin.js": "*",
     "webcomponentsjs": "~0.5.2",
