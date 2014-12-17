@@ -1,31 +1,64 @@
+/* ----------------------- */
+/*      CUSTOM COLORS      */
+/* ----------------------- */
+
 $white: #fff;
 $black: #000;
 $grey60: #666;
+$grey50: #818181;
 $grey40: #999;
+$grey10: #e5e5e5;
+$grey: #3c3c3c;
+$darkgrey: #333;
 $pink: #ff725e;
 $darkpink: #cc5b4b;
+$cyan: #008da1;
+$darkcyan: #007181;
 
+// will be removed
 body{
-    background-color: $grey40;
+    background-color: $black;
     height: 2000px;
 }
 
-#header{
-    position: fixed;
+/* ------------------------- */
+/*      SECTIONS COLORS      */
+/* ------------------------- */
+
+
+#header-wrap{
     background-color: $white;
 }
 
 #home{
     background: linear-gradient($pink, $darkpink);
-    color: $white;
 }
 
 #desc{
-    background: $white;
+    background: linear-gradient($white, $grey10);
+}
+
+#demo{
+    background: linear-gradient($grey, $darkgrey);
+    height: 1000px;
+}
+
+#news{
+    background: linear-gradient($cyan, $darkcyan);
+    height: 1000px;
+}
+
+#links{
+    background: linear-gradient($pink, $darkpink);
+    height: 1000px;
 }
 
 .wrapper{
     width: 1024px;
+}
+
+.fixed{
+    position: fixed;
 }
 
 .logo{
@@ -36,13 +69,48 @@ body{
     background-repeat: no-repeat;    
 }
 
-.mt30{
+.w32p{
+    width: 32px;
+}
+
+.mt30p{
     margin-top: 30px;    
 }
 
-.nav a{
+.t90p{
+    top: 90px;
+}
+
+.mt90p{
+    margin-top: 90px;
+}
+
+.pt50p{
+    padding-top: 50px;
+}
+
+.pb50p{
+    padding-bottom: 50px;
+}
+
+.pt100p{
+    padding-top: 100px;
+}
+
+.pb100p{
+    padding-bottom: 100px;
+}
+
+.top{
+    top: 0;
+}
+
+.baseline{
+    vertical-align: baseline;
+}
+
+a{
     text-decoration: none;
-    color: $grey40;
 }
 
 .nav a:hover{
@@ -50,11 +118,77 @@ body{
 }
 
 h1{
-    padding-top: 200px;
-    margin: 0;
+    margin: 20px 0 20px 0;
 }
 
 h2{
-    font-size: 1.2em;
+    margin: 0 0 20px 0;
     font-weight: normal;
 }
+
+p{
+    margin: 0;
+    line-height: 1.5em;
+}
+
+img{
+    margin: 0;
+}
+
+.justify{
+    text-align: justify;
+}
+
+.white{
+    color: $white;
+}
+
+.pink{
+    color: $pink;
+}
+
+.grey40{
+    color: $grey40;
+}
+
+.grey50{
+    color: $grey50;
+}
+
+.sb20{
+    text-shadow: 0 2px rgba(0,0,0,0.2);
+}
+
+#header-wrap{
+    position: relative;
+    z-index: 1;
+}
+
+#menu-indicator {
+    & > div {
+        height: 10px;
+        display: inline-block;
+        background: white;
+        transition: width 0.5s ease;
+    }
+    
+    .left {
+        width: 55.7%;
+        transform: skewX(-45deg);
+        transform-origin: top right;
+        box-shadow: -2px 0px 10px #222;
+    }
+    
+    .right {
+        width: 44.3%;
+        transform: skewX(45deg);
+        transform-origin: top left;
+        box-shadow: 2px 0px 10px #222;
+    }
+}
+
+a{color: $grey40}
+#a_home.nav_active{color: $pink;}
+#a_demo.nav_active{color: $grey;}
+#a_news.nav_active{color: $cyan;}
+#a_links.nav_active{color: $pink;}

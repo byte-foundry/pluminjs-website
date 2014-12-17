@@ -16,6 +16,8 @@
   "strict": true,
   "jquery": true,
   globals: {
-    "Polymer": false
+    "Polymer": false,
+    "$": false,
+    "skrollr": false
   }
 }

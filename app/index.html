@@ -10,12 +10,14 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/prism/themes/prism.css" />
+    <link rel="stylesheet" href="../bower_components/knacss/css/knacss.css" />
     <link rel="stylesheet" href="../bower_components/codemirror/lib/codemirror.css" />
     <!-- endbower -->
     <link rel="stylesheet" href="../bower_components/prism/themes/prism-okaidia.css" />
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/knacss/knacss.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -25,23 +27,85 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-      <section id="header" class="line w100">
-          <div class="wrapper center ptm pbs pll prl">
+      <section id="header" class="w100 fixed top">
+          <div id="header-wrap">
+            <div class="wrapper center ptm pbs pll prl">
               <div class="logo inbl"></div>
-              <ul class="right unstyled nav big mt30">
-                  <li class="left mrl"><a href="#home">Home</a></li>
-                  <li class="left mll mrl"><a href="#demo">Demo</a></li>
-                  <li class="left mll mrl"><a href="#news">News</a></li>
-                  <li class="left mll"><a href="#links">Links</a></li>
+              <ul class="right unstyled nav big mt30p">
+                  <li class="left mrl"><a href="#home" id="a_home" class="grey40">Home</a></li>
+                  <li class="left mll mrl"><a href="#demo" id="a_demo" class="grey40">Demo</a></li>
+                  <li class="left mll mrl"><a href="#news" id="a_news" class="grey40">News</a></li>
+                  <li class="left mll"><a href="#links" id="a_links" class="grey40">Links</a></li>
               </ul>
+            </div>
+          </div>
+          <div id="menu-indicator">
+              <div class="left"></div>
+              <div class="right"></div>
           </div>
       </section>
       
-      <section id="home" class"line w100">
-          <div class="wrapper center ptm pbs pll prl">
-              <h1>Plumin.js</h1>
-              <h2>Create and manipulate fonts<br/>using javascript</h2>
+      
+      <section id="home" class="line w100 mt90p" data-90-top="" data-center-bottom="" data-emit-events>
+          <div class="wrapper center ptl pbl pll prl clearfix">
+              <div class="w50 inbl">
+                  <h1 class="white sb20">Plumin.js</h1>
+                  <h2 class="white sb20">Create and manipulate fonts<br/>using javascript</h2>
+              </div>
+              <div class="w50 ptl pbl pll prl inbl right">
+                  <img src="img/phome.png" class="mod center"/>
+              </div>
           </div>
+          <div id="desc" class="line w100">
+          <div class="wrapper center pt100p pb100p pll prl clearfix">
+              <div class="col prm">
+                  <h2>What is Plumin.js ?</h2>
+                  <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -> prototypo</p>
+              </div>
+              <div class="col plm">
+                  <h2>What is Prototypo then ?</h2>
+                  <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
+              </div>
+              </div>
+          </div>
+      </section>
+      
+<!--
+      <section id="desc" class="line w100">
+          <div class="wrapper center pt100p pb100p pll prl clearfix">
+              <div class="col prm">
+                  <h2>What is Plumin.js ?</h2>
+                  <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -> prototypo</p>
+              </div>
+              <div class="col plm">
+                  <h2>What is Prototypo then ?</h2>
+                  <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
+              </div>
+          </div>
+      </section>
+-->
+      
+      <section id="demo" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
+          <div class="wrapper center pt50p pb50p pll prl">
+              <h1 class="white sb20 inbl baseline">Demo</h1>
+              <h2 class="white sb20 inbl baseline mls">- Let's try this out!</h2>
+              <p class="grey50 big">Edit the green values in the code and hit run to see the outcome.</p>
+              </div>
+      </section>
+      
+      <section id="news" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
+          <div class="wrapper center pt50p pb50p pll prl">
+              <h1 class="white sb20 inbl baseline">News</h1>
+              <h2 class="white sb20 inbl baseline mls">- Keep in touch!</h2>
+              </div>
+      </section>
+      
+      <section id="links" class="line w100" data-90-top="" data-emit-events>
+          <div class="wrapper center pt50p pb50p pll prl">
+              <h1 class="white sb20 inbl baseline">Links</h1>
+              <h2 class="white sb20 inbl baseline mls">- Follow us!</h2>
+              </div>
+      </section>
           
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -62,6 +126,7 @@
     <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
     <script src="../bower_components/polymer/polymer.js"></script>
     <script src="../bower_components/superagent/superagent.js"></script>
+    <script src="../bower_components/skrollr/src/skrollr.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
