@@ -15,9 +15,11 @@
   "unused": true,
   "strict": true,
   "jquery": true,
-  globals: {
-    "Polymer": false,
+  "devel": true,
+  "globals": {
     "$": false,
-    "skrollr": false
+    "xtag": false,
+    "skrollr": false,
+    "request": false
   }
 }

@@ -1,7 +1,17 @@
 {
+  "name": "plumin-website",
   "private": true,
   "engines": {
     "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/byte-foundry/plumin-website.git"
+  },
+  "author": "Louis-Rémi <lrbabe@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byte-foundry/plumin-website/issues"
   },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",

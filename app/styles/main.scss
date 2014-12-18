@@ -66,7 +66,7 @@ body{
     width: 250px;
     background-image: url(../img/logo.png);
     background-size: contain;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
 }
 
 .w32p{
@@ -74,7 +74,7 @@ body{
 }
 
 .mt30p{
-    margin-top: 30px;    
+    margin-top: 30px;
 }
 
 .t90p{
@@ -171,14 +171,14 @@ img{
         background: white;
         transition: width 0.5s ease;
     }
-    
+
     .left {
         width: 55.7%;
         transform: skewX(-45deg);
         transform-origin: top right;
         box-shadow: -2px 0px 10px #222;
     }
-    
+
     .right {
         width: 44.3%;
         transform: skewX(45deg);

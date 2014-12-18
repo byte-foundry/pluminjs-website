@@ -2,12 +2,9 @@
   "name": "pluminjs-website",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1",
     "prism": "gh-pages",
     "plumin.js": "*",
-    "webcomponentsjs": "~0.5.2",
-    "polymer": "Polymer/polymer#~0.5.2",
-    "superagent": "~0.21.0",
-    "skrollr": "~0.6.29"
+    "skrollr": "~0.6.29",
+    "jquery": "~2.1.2"
   }
 }
