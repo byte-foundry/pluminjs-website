@@ -1,4 +1,4 @@
-var texts = ["using javascript", "like there's no tomorrow", "like no one's watching"];
+var texts = ["using javascript.", "like there's no tomorrow.", "like no one's watching. "];
 var i = 0;
 setInterval(function() {
     i++;

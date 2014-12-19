@@ -9,6 +9,7 @@ gulp.task('styles', function () {
     .pipe($.plumber())
     .pipe($.sass({
       style: 'expanded',
+      includePaths: 'app/styles',
       precision: 10
     }))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))

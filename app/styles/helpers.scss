@@ -1,0 +1,113 @@
+@import "variables";
+
+// positioning
+
+.w32p {
+    width: 32px;
+}
+
+.mt30p {
+    margin-top: 30px;
+}
+
+.t90p {
+    top: 90px;
+}
+
+.mt90p {
+    margin-top: 90px;
+}
+
+.pt50p {
+    padding-top: 50px;
+}
+
+.pb50p {
+    padding-bottom: 50px;
+}
+
+.pt100p {
+    padding-top: 100px;
+}
+
+.pb100p {
+    padding-bottom: 100px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.valign-baseline {
+    vertical-align: baseline;
+}
+
+// borders
+
+.rounded {
+    border-radius: 5px;
+}
+
+.roundedbl {
+    border-bottom-left-radius: 5px;
+}
+
+.bog10 {
+    border: 1px solid $grey10;
+}
+
+.bog20l {
+    border-left: 1px solid $grey10;
+}
+
+// colors
+
+.white {
+    color: $white;
+}
+
+.bgwhite {
+    background-color: $white;
+}
+
+.pink {
+    color: $pink;
+}
+
+.grey40 {
+    color: $grey40;
+}
+
+.grey50 {
+    color: $grey50;
+}
+
+.grey10 {
+    color: $grey10;
+}
+
+.bggrey10 {
+    background-color: $grey10;
+}
+
+// shadows
+
+.tsb20 {
+    text-shadow: 0 2px rgba(0,0,0,0.2);
+}
+
+.bsb20 {
+    box-shadow: 0 2px rgba(0,0,0,0.2);
+}
