@@ -7,6 +7,7 @@ $black: #000;
 $grey60: #666;
 $grey50: #818181;
 $grey40: #999;
+$grey20: #cdcdcd;
 $grey10: #e5e5e5;
 $grey: #3c3c3c;
 $darkgrey: #333;
@@ -18,7 +19,6 @@ $darkcyan: #007181;
 // will be removed
 body{
     background-color: $black;
-    height: 2000px;
 }
 
 /* ------------------------- */
@@ -30,7 +30,7 @@ body{
     background-color: $white;
 }
 
-#home{
+#home .title{
     background: linear-gradient($pink, $darkpink);
 }
 
@@ -38,19 +38,20 @@ body{
     background: linear-gradient($white, $grey10);
 }
 
-#demo{
+#docs{
     background: linear-gradient($grey, $darkgrey);
-    height: 1000px;
 }
 
 #news{
     background: linear-gradient($cyan, $darkcyan);
-    height: 1000px;
 }
 
-#links{
+#about{
     background: linear-gradient($pink, $darkpink);
-    height: 1000px;
+}
+
+#titletext{
+    vertical-align: middle;
 }
 
 .wrapper{
@@ -139,8 +140,28 @@ img{
     text-align: justify;
 }
 
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.rounded{
+    border-radius: 5px;
+}
+
+.roundedbl{
+    border-bottom-left-radius: 5px;
+}
+
 .white{
     color: $white;
+}
+
+.bgwhite{
+    background-color: $white;
 }
 
 .pink{
@@ -155,8 +176,28 @@ img{
     color: $grey50;
 }
 
-.sb20{
+.grey10{
+    color: $grey10;
+}
+
+.bggrey10{
+    background-color: $grey10;
+}
+
+.tsb20{
     text-shadow: 0 2px rgba(0,0,0,0.2);
+}
+
+.bsb20{
+    box-shadow: 0 2px rgba(0,0,0,0.2);
+}
+
+.bog10{
+    border: 1px solid $grey10;
+}
+
+.bog20l{
+    border-left: 1px solid $grey10;
 }
 
 #header-wrap{
@@ -168,19 +209,17 @@ img{
     & > div {
         height: 10px;
         display: inline-block;
-        background: white;
+        background: $white;
         transition: width 0.5s ease;
     }
 
     .left {
-        width: 55.7%;
         transform: skewX(-45deg);
         transform-origin: top right;
         box-shadow: -2px 0px 10px #222;
     }
 
     .right {
-        width: 44.3%;
         transform: skewX(45deg);
         transform-origin: top left;
         box-shadow: 2px 0px 10px #222;
@@ -189,6 +228,114 @@ img{
 
 a{color: $grey40}
 #a_home.nav_active{color: $pink;}
-#a_demo.nav_active{color: $grey;}
+#a_docs.nav_active{color: $grey;}
 #a_news.nav_active{color: $cyan;}
-#a_links.nav_active{color: $pink;}
+#a_about.nav_active{color: $pink;}
+
+
+.news-twitter, .news-github{
+    width: 452px;
+    height: 500px;
+}
+
+.news-github{
+    background-color: $white;
+}
+
+.phome{
+    height: 440px;
+}
+
+.phome-ctrl{
+    height: 35px;
+}
+
+.phome a{
+    display: inline-block;
+    height: inherit;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.arrow{
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+input[name$="tab"] + * {
+    display: none;
+}
+input[name$="tab"]:checked + * {
+    display: block;
+}
+
+#home ul{
+    border-bottom: 1px solid $grey10;
+    border-left: 1px solid $grey10;
+    border-bottom-left-radius: 5px;
+    text-align: right;
+    padding: 0;
+    display: inline-block;
+}
+
+#home ul li{
+    width: 80px;
+    text-align: center;
+    border-right: 1px solid $grey10;
+}
+
+#home ul li:last-of-type{
+    border-right: none;
+}
+
+#home label, #home .title a{
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    color: $grey40;
+}
+
+#home label:hover, #home .title a:hover{
+    color: $grey60;
+}
+
+#home .label_active, home .title a:active, #home .label_active:hover, #home .title a:active{
+    color: $black;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+pre.mts.mbm{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+p.result{
+    font-family: 'Demo', sans-serif;
+    font-size: 20em;
+    line-height: normal;
+    margin-top: -50px;
+    text-indent: 125px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.arrow-down-darkpink { border-top: 30px solid $darkpink; }
+.arrow-up-grey { border-bottom: 30px solid $grey; }
+.arrow-down-darkgrey { border-top: 30px solid $darkgrey; }
+.arrow-up-pink { border-bottom: 30px solid $pink; }
