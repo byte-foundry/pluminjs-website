@@ -17,7 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/knacss/knacss.css">
-        <link rel="stylesheet" href="styles/helpers.scss">
+        <link rel="stylesheet" href="styles/helpers.css">
 
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -30,12 +30,14 @@
         <section id="header" class="w100 fixed top">
             <div id="header-wrap">
                 <div class="wrapper center ptm pbs pll prl">
-                    <div class="logo inbl"></div>
+                    <a href="/">
+                        <div class="logo inbl"></div>
+                    </a>
                     <ul class="right unstyled nav big mt30p">
-                        <li class="left mrl"><a href="#home" id="a-home" class="grey40">Home</a></li>
-                        <li class="left mll mrl"><a href="#docs" id="a-docs" class="grey40">Docs</a></li>
-                        <li class="left mll mrl"><a href="#news" id="a-news" class="grey40">News</a></li>
-                        <li class="left mll"><a href="#about" id="a-about" class="grey40">About</a></li>
+                        <li class="left mrl"><a href="#home" class="a-home nav-active grey40">Home</a></li>
+                        <li class="left mll mrl"><a href="#docs" class="a-docs grey40">Docs</a></li>
+                        <li class="left mll mrl"><a href="#news" class="a-news grey40">News</a></li>
+                        <li class="left mll"><a href="#about" class="a-about grey40">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,7 +58,7 @@
                         <!--                      <a href="#" id="source" class="pts prs pls">Source</a><a href="#" class="pts prs pls bog10l">Edit</a>-->
                         <div class="clearfix">
                             <ul class="right">
-                                <li class="inbl"><label class="result" for="result">Result</label></li
+                                <li class="inbl"><label class="result label-active" for="result">Result</label></li
                                 ><li class="inbl"><label for="source">Source</label></li
                                 ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit</a></li>
                             </ul>
@@ -95,7 +97,7 @@ demo.addGlyph(glyph_p)
                 </div>
             </div>
             <div id="desc" class="line w100">
-                <div class="arrow arrow-down-darkpink center"></div>
+                <div class="arrow down-darkpink center"></div>
                 <div class="wrapper center pt100p pb100p pll prl clearfix">
                     <div class="col prm">
                         <h2>What is Plumin.js?</h2>
@@ -106,7 +108,7 @@ demo.addGlyph(glyph_p)
                         <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
                     </div>
                 </div>
-                <div class="arrow arrow-up-grey center"></div>
+                <div class="arrow up-grey center"></div>
             </div>
         </section>
 
@@ -134,7 +136,7 @@ demo.addGlyph(glyph_p)
         </section>
 
         <section id="news" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
-            <div class="arrow arrow-down-darkgrey center"></div>
+            <div class="arrow down-darkgrey center"></div>
             <div class="wrapper center pt50p pb50p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">News</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Keep in touch!</h2>
@@ -146,7 +148,7 @@ demo.addGlyph(glyph_p)
                     </div>
                 </div>
             </div>
-            <div class="arrow arrow-up-pink center"></div>
+            <div class="arrow up-pink center"></div>
         </section>
 
         <section id="about" class="line w100" data-90-top="" data-emit-events>
@@ -156,7 +158,7 @@ demo.addGlyph(glyph_p)
             </div>
         </section>
 
-        <section id="footer" class="line w100 bgwhite" data-90-top="" data-emit-events>
+        <section id="footer" class="line w100 bgwhite">
             <div class="wrapper center pt100p pb100p pll prl">
                 <h2 class="inbl valign-baseline mls">footer</h2>
             </div>
@@ -182,6 +184,7 @@ demo.addGlyph(glyph_p)
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src="scripts/debounce-throttle.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
     </body>

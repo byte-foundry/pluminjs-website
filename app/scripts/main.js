@@ -1,90 +1,77 @@
-var texts = ["using javascript.", "like there's no tomorrow.", "like no one's watching. "];
-var i = 0;
-setInterval(function() {
-    i++;
-    $('#swaptext').fadeOut('slow', function(){
-        $('#swaptext').html(texts[i % texts.length]);
-        $('#swaptext').fadeIn('slow');
-    });
-},5000);
+(function() {
+    'use strict';
 
-var allowUpdateMenuIndicator = true,
-    currentSectionId;
+    var texts = ['using javascript.', 'like there\'s no tomorrow.', 'like no one\'s watching. '],
+        scrollAdjust = 70,
+        i = 0;
 
-function updateMenuIndicator( sectionId ) {
-    var $menuItem = $('#header a[href=' + sectionId + ']'),
-        bbox = $menuItem[0].getBoundingClientRect(),
-        middle = bbox.left + bbox.width / 2,
-        totalWidth = $(document.body).width();
+    setInterval(function() {
+        i++;
+        $('#swaptext').fadeOut('slow', function() {
+            $('#swaptext').html(texts[i % texts.length]);
+            $('#swaptext').fadeIn('slow');
+        });
+    }, 5000);
 
-    currentSectionId = sectionId;
+    var allowUpdateMenuIndicator = true,
+        currentSectionId;
 
-    $('#menu-indicator .left').css('width', middle );
-    $('#menu-indicator .right').css('width', totalWidth - middle );
-    $('.nav_active').removeClass();
-    $('#header a[href=' + sectionId + ']').addClass('nav_active');
-}
+    function updateMenuIndicator( sectionId ) {
+        var $menuItem = $('#header a[href=' + sectionId + ']'),
+            bbox = $menuItem[0].getBoundingClientRect(),
+            middle = bbox.left + bbox.width / 2,
+            totalWidth = $(document.body).width();
 
-$(function(){
-    // set defaults
-    $('#a_home').addClass('nav_active');
-    $('.result').addClass('label_active');
-    $( "#result" ).prop( "checked", true );
+        currentSectionId = sectionId;
 
-    // does menu shrink ?
-    //if(($(window).width()) < 950){
-    //    var headerHeight = 100;
-    //} else {
-    //    headerHeight = 100;
-    //}
+        $('#menu-indicator .left').css( 'width', middle );
+        $('#menu-indicator .right').css( 'width', totalWidth - middle );
+        $('.nav-active').removeClass('nav-active');
+        $('#header a[href=' + sectionId + ']').addClass('nav-active');
+    }
 
-    var speed=1000;
+    $(function() {
+        // set defaults
+        $('#result').prop('checked', true);
 
-    skrollr.init({
-        keyframe: function(element, name, direction) {
-            if (allowUpdateMenuIndicator){
-                updateMenuIndicator('#' + element.id);
+        skrollr.init({
+            keyframe: function(element) {
+                if (allowUpdateMenuIndicator) {
+                    updateMenuIndicator('#' + element.id);
+                }
             }
+        });
+
+        if ( window.location.hash !== '' ) {
+            setTimeout(function() {
+                $(document.body).animate({
+                    scrollTop: $(window.location.hash).offset().top - scrollAdjust
+                }, 200);
+            }, 1000);
+
         }
     });
 
-    $(document).on('click', '#header a', function(){
+    $(document).on('click', '#header a', function() {
 
         var idSectionCible = this.href.replace(/.*?(#.*)$/, '$1');
         updateMenuIndicator(idSectionCible);
         allowUpdateMenuIndicator = false;
 
         $(document.body).stop().animate({
-            // TODO: 70 ne devrait pas être en dur
-            scrollTop: $(idSectionCible).offset().top - 70
+            scrollTop: $(idSectionCible).offset().top - scrollAdjust
 
         }, 1000, function() {
             allowUpdateMenuIndicator = true;
         });
-
-        return false;
     });
 
-    $(document).on('click', 'label', function(){
-        $(this).closest('ul').find('label').removeClass('label_active');
-        $(this).addClass('label_active');
+    $(document).on('click', 'label', function() {
+        $(this).closest('ul').find('label').removeClass('label-active');
+        $(this).addClass('label-active');
     });
 
-    $(window).on('resize', function() {
+    $(window).on('resize', $.debounce(300, function() {
         updateMenuIndicator(currentSectionId);
-    });
-
-
-//    $(document).on('click', '#source', function(){
-//        if ($("#source").text() == 'Source'){
-//            $("#source").text("Run");
-//            $(".CodeMirror").css('display', 'block');
-//        } else if ($("#source").text() == 'Run'){
-//            $("#source").text("Source");
-//            $(".CodeMirror").css('display', 'none');
-//        }
-//
-//        return false;
-//    });
-
-});
+    }));
+})();

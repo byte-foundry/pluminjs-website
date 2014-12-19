@@ -50,6 +50,10 @@
     position: fixed;
 }
 
+.top {
+    top: 0;
+}
+
 .valign-baseline {
     vertical-align: baseline;
 }
@@ -110,4 +114,11 @@
 
 .bsb20 {
     box-shadow: 0 2px rgba(0,0,0,0.2);
+}
+
+// others
+
+.unselectable {
+    -webkit-touch-callout: none;
+    user-select: none;
 }

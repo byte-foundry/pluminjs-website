@@ -1,14 +1,57 @@
 @import "variables";
 
-// will be removed
+// generic rules
+
 body {
     background-color: $black;
+}
+
+a {
+    text-decoration: none;
+    color: $grey40;
+}
+
+.nav a:hover {
+    color: $grey60;
+}
+
+h1 {
+    margin: 20px 0 20px 0;
+}
+
+h2 {
+    margin: 0 0 20px 0;
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
+    line-height: 1.5em;
+}
+
+img {
+    margin: 0;
+}
+
+//modules
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+input[name$="tab"] + * {
+    display: none;
+}
+input[name$="tab"]:checked + * {
+    display: block;
 }
 
 /* ------------------------- */
 /*      SECTIONS COLORS      */
 /* ------------------------- */
-
 
 #header-wrap {
     background-color: $white;
@@ -42,8 +85,6 @@ body {
     width: 1024px;
 }
 
-
-
 .logo {
     height: 60px;
     width: 250px;
@@ -54,38 +95,6 @@ body {
         repeat: no-repeat;
     }
 }
-
-.top {
-    top: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-.nav a:hover {
-    color: $grey60;
-}
-
-h1 {
-    margin: 20px 0 20px 0;
-}
-
-h2 {
-    margin: 0 0 20px 0;
-    font-weight: normal;
-}
-
-p {
-    margin: 0;
-    line-height: 1.5em;
-}
-
-img {
-    margin: 0;
-}
-
-
 
 #header-wrap {
     position: relative;
@@ -113,24 +122,22 @@ img {
     }
 }
 
-a {color: $grey40}
 
-#a-home.nav-active {
+.a-home.nav-active {
     color: $pink;
 }
 
-#a-docs.nav-active {
+.a-docs.nav-active {
     color: $grey;
 }
 
-#a-news.nav-active {
+.a-news.nav-active {
     color: $cyan;
 }
 
-#a-about.nav-active {
+.a-about.nav-active {
     color: $pink;
 }
-
 
 .news-twitter,
 .news-github {
@@ -163,13 +170,22 @@ a {color: $grey40}
     height: 0;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
-}
 
-input[name$="tab"] + * {
-    display: none;
-}
-input[name$="tab"]:checked + * {
-    display: block;
+    &.down-darkpink {
+        border-top: 30px solid $darkpink;
+    }
+
+    &.up-grey {
+        border-bottom: 30px solid $grey;
+    }
+
+    &.down-darkgrey {
+        border-top: 30px solid $darkgrey;
+    }
+
+    &.up-pink {
+        border-bottom: 30px solid $pink;
+    }
 }
 
 #home ul {
@@ -204,18 +220,11 @@ input[name$="tab"]:checked + * {
     color: $grey60;
 }
 
-#home .label_active,
+#home .label-active,
 #home .title a:active,
-#home .label_active:hover,
+#home .label-active:hover,
 #home .title a:active {
     color: $black;
-}
-
-code[class*="language-"],
-pre[class*="language-"] {
-    font-size: 12px;
-    line-height: 1.2;
-    margin: 0;
 }
 
 pre.mts.mbm {
@@ -229,29 +238,4 @@ p.result {
     line-height: normal;
     margin-top: -50px;
     text-indent: 125px;
-}
-
-.unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.arrow-down-darkpink {
-    border-top: 30px solid $darkpink;
-}
-
-.arrow-up-grey {
-    border-bottom: 30px solid $grey;
-}
-
-.arrow-down-darkgrey {
-    border-top: 30px solid $darkgrey;
-}
-
-.arrow-up-pink {
-    border-bottom: 30px solid $pink;
 }
