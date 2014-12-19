@@ -29,34 +29,34 @@
 <![endif]-->
         <section id="header" class="w100 fixed top">
             <div id="header-wrap">
-                <div class="wrapper center ptm pbs pll prl">
+                <div class="wrapper center txtcenter large-txtleft ptm pbs pll prl">
                     <a href="/">
                         <div class="logo inbl"></div>
                     </a>
-                    <ul class="right unstyled nav big mt30p">
-                        <li class="left mrl"><a href="#home" class="a-home nav-active grey40">Home</a></li>
-                        <li class="left mll mrl"><a href="#docs" class="a-docs grey40">Docs</a></li>
-                        <li class="left mll mrl"><a href="#news" class="a-news grey40">News</a></li>
+                    <ul class="mod center large-right unstyled nav big mt30p";>
+                        <li class="left mrm"><a href="#home" class="a-home nav-active grey40">Home</a></li>
+                        <li class="left mll mrm"><a href="#docs" class="a-docs grey40">Docs</a></li>
+                        <li class="left mll mrm"><a href="#news" class="a-news grey40">News</a></li>
                         <li class="left mll"><a href="#about" class="a-about grey40">About</a></li>
                     </ul>
                 </div>
             </div>
-            <div id="menu-indicator">
+            <div id="menu-indicator" class="medium-visible">
                 <div class="left"></div>
                 <div class="right"></div>
             </div>
         </section>
 
-        <section id="home" class="line w100 mt90p" data-90-top="" data-center-bottom="" data-emit-events>
+        <section class="home w100 mt90p" data-90-top="" data-center-bottom="" data-emit-events>
+            <div id="home" class="anchor"></div>
             <div class="title">
-                <div class="row wrapper center pt100p pb100p pll prl clearfix">
-                    <div id="titletext" class="w50 col">
+                <div class="wrapper row center pt100p pb100p pll prl">
+                    <div id="titletext" class="mod large-col large-w50 txtcenter large-txtleft center">
                         <h1 class="white tsb20">Plumin.js</h1>
                         <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript.</span></h2>
                     </div>
-                    <div class="col phome w50 bgwhite rounded bsb20 bog10">
-                        <!--                      <a href="#" id="source" class="pts prs pls">Source</a><a href="#" class="pts prs pls bog10l">Edit</a>-->
-                        <div class="clearfix">
+                    <div class="center mod large-col large-w50 phome bgwhite rounded bsb20 bog10 mw472p">
+                        <div class="clearfix zindex1">
                             <ul class="right">
                                 <li class="inbl"><label class="result label-active" for="result">Result</label></li
                                 ><li class="inbl"><label for="source">Source</label></li
@@ -96,28 +96,29 @@ demo.addGlyph(glyph_p)
                     </div>
                 </div>
             </div>
-            <div id="desc" class="line w100">
+            <div class="desc line w100">
                 <div class="arrow down-darkpink center"></div>
-                <div class="wrapper center pt100p pb100p pll prl clearfix">
-                    <div class="col prm">
-                        <h2>What is Plumin.js?</h2>
-                        <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -> prototypo</p>
+                <div class="wrapper center pt100p pb50p pll prl clearfix">
+                    <div class="mod large-col large-prm pbl">
+                        <h2 class="txtcenter large-txtleft">What is Plumin.js?</h2>
+                        <p class="grey50 justify center large-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -> prototypo</p>
                     </div>
-                    <div class="col plm">
-                        <h2>What is Prototypo then?</h2>
-                        <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
+                    <div class="mod large-col large-plm">
+                        <h2 class="txtcenter large-txtleft">What is Prototypo then?</h2>
+                        <p class="grey50 justify center large-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
                     </div>
                 </div>
                 <div class="arrow up-grey center"></div>
             </div>
         </section>
 
-        <section id="docs" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
-            <div class="wrapper center pt100p pb50p pll prl">
+        <section class="docs line w100" data-90-top="" data-center-bottom="" data-emit-events>
+            <div id="docs" class="anchor"></div>
+            <div class="wrapper center pt50p pb50p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">Docs</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Let's try this out!</h2>
                 <div class="row mtm">
-                    <div class="col w100 rounded bgwhite bsb20 bog10 pam">
+                    <div class="col mw944p rounded bgwhite bsb20 bog10 pam">
                         <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
                         <pre class="mts mbm"><code class="language-javascript">var demo = new p.Font({ familyName: 'Demo' })</code></pre>
                         <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
@@ -135,7 +136,8 @@ demo.addGlyph(glyph_p)
             </div>
         </section>
 
-        <section id="news" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
+        <section class="news line w100" data-90-top="" data-center-bottom="" data-emit-events>
+            <div id="news" class="anchor down20p"></div>
             <div class="arrow down-darkgrey center"></div>
             <div class="wrapper center pt50p pb50p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">News</h1>
@@ -151,7 +153,8 @@ demo.addGlyph(glyph_p)
             <div class="arrow up-pink center"></div>
         </section>
 
-        <section id="about" class="line w100" data-90-top="" data-emit-events>
+        <section class="about line w100" data-90-top="" data-emit-events>
+            <div id="about" class="anchor"></div>
             <div class="wrapper center pt100p pb100p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">About</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Tools and team</h2>

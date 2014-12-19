@@ -2,7 +2,6 @@
     'use strict';
 
     var texts = ['using javascript.', 'like there\'s no tomorrow.', 'like no one\'s watching. '],
-        scrollAdjust = 70,
         i = 0;
 
     setInterval(function() {
@@ -37,19 +36,19 @@
         skrollr.init({
             keyframe: function(element) {
                 if (allowUpdateMenuIndicator) {
-                    updateMenuIndicator('#' + element.id);
+                    updateMenuIndicator('#' + element.firstElementChild.id);
                 }
             }
         });
 
-        if ( window.location.hash !== '' ) {
+        /*if ( window.location.hash !== '' ) {
             setTimeout(function() {
                 $(document.body).animate({
                     scrollTop: $(window.location.hash).offset().top - scrollAdjust
                 }, 200);
             }, 1000);
 
-        }
+        }*/
     });
 
     $(document).on('click', '#header a', function() {
@@ -59,11 +58,14 @@
         allowUpdateMenuIndicator = false;
 
         $(document.body).stop().animate({
-            scrollTop: $(idSectionCible).offset().top - scrollAdjust
+            scrollTop: $(idSectionCible).offset().top
 
         }, 1000, function() {
             allowUpdateMenuIndicator = true;
         });
+
+        history.replaceState(null, null, idSectionCible);
+        return false;
     });
 
     $(document).on('click', 'label', function() {

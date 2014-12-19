@@ -27,6 +27,7 @@ h2 {
 p {
     margin: 0;
     line-height: 1.5em;
+    max-width: 500px;
 }
 
 img {
@@ -57,23 +58,23 @@ input[name$="tab"]:checked + * {
     background-color: $white;
 }
 
-#home .title {
+.title {
     background: linear-gradient($pink, $darkpink);
 }
 
-#desc  {
+.desc  {
     background: linear-gradient($white, $grey10);
 }
 
-#docs {
+.docs {
     background: linear-gradient($grey, $darkgrey);
 }
 
-#news {
+.news {
     background: linear-gradient($cyan, $darkcyan);
 }
 
-#about {
+.about {
     background: linear-gradient($pink, $darkpink);
 }
 
@@ -82,12 +83,12 @@ input[name$="tab"]:checked + * {
 }
 
 .wrapper {
-    width: 1024px;
+    max-width: 1024px;
 }
 
 .logo {
-    height: 60px;
-    width: 250px;
+    height: 30px;
+    width: 130px;
 
     background: {
         image: url(../img/logo.png);
@@ -98,10 +99,12 @@ input[name$="tab"]:checked + * {
 
 #header-wrap {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 #menu-indicator  {
+    display: none;
+
     & > div  {
         height: 10px;
         display: inline-block;
@@ -188,7 +191,7 @@ input[name$="tab"]:checked + * {
     }
 }
 
-#home ul {
+.home ul {
     border-bottom: 1px solid $grey10;
     border-left: 1px solid $grey10;
     border-bottom-left-radius: 5px;
@@ -197,33 +200,33 @@ input[name$="tab"]:checked + * {
     display: inline-block;
 }
 
-#home ul li {
+.home ul li {
     width: 80px;
     text-align: center;
     border-right: 1px solid $grey10;
 }
 
-#home ul li:last-of-type {
+.home ul li:last-of-type {
     border-right: none;
 }
 
-#home label,
-#home .title a {
+.home label,
+.home .title a {
     margin: 0;
     width: 100%;
     padding: 10px;
     color: $grey40;
 }
 
-#home label:hover,
-#home .title a:hover {
+.home label:hover,
+.home .title a:hover {
     color: $grey60;
 }
 
-#home .label-active,
-#home .title a:active,
-#home .label-active:hover,
-#home .title a:active {
+.home .label-active,
+.home .title a:active,
+.home .label-active:hover,
+.home .title a:active {
     color: $black;
 }
 
