@@ -1,3 +1,13 @@
+var texts = ["using javascript", "like there's no tomorrow", "like no one's watching"];
+var i = 0;
+setInterval(function() {
+    i++;
+    $('#swaptext').fadeOut('slow', function(){
+        $('#swaptext').html(texts[i % texts.length]);
+        $('#swaptext').fadeIn('slow');
+    });
+},5000);
+
 var allowUpdateMenuIndicator = true,
     currentSectionId;
 

@@ -33,9 +33,9 @@
                     <div class="logo inbl"></div>
                     <ul class="right unstyled nav big mt30p">
                         <li class="left mrl"><a href="#home" id="a_home" class="grey40">Home</a></li>
-                        <li class="left mll mrl"><a href="#demo" id="a_demo" class="grey40">Demo</a></li>
+                        <li class="left mll mrl"><a href="#docs" id="a_docs" class="grey40">Docs</a></li>
                         <li class="left mll mrl"><a href="#news" id="a_news" class="grey40">News</a></li>
-                        <li class="left mll"><a href="#links" id="a_links" class="grey40">Links</a></li>
+                        <li class="left mll"><a href="#about" id="a_about" class="grey40">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <div class="row wrapper center pt100p pb100p pll prl clearfix">
                     <div id="titletext" class="w50 col">
                         <h1 class="white tsb20">Plumin.js</h1>
-                        <h2 class="white tsb20">Create and manipulate fonts<br/>using javascript</h2>
+                        <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript</span></h2>
                     </div>
                     <div class="col phome w50 bgwhite rounded bsb20 bog10">
                         <!--                      <a href="#" id="source" class="pts prs pls">Source</a><a href="#" class="pts prs pls bog10l">Edit</a>-->
@@ -62,15 +62,15 @@
                             </ul>
                         </div>
                         <input id="result" type="radio" name="previewtab" hidden />
-                        <div class="pam"><p>P</p></div>
+                        <div class="pam"><p class="result inbl unselectable">p</p></div>
 
                         <input id="source" type="radio" name="previewtab" hidden checked/>
                         <div class="pam">
                             <pre><code class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
-    glyph_p = new p.Glyph({
-        name: 'p',
-        advanceWidth: 512
-    });
+glyph_p = new p.Glyph({
+    name: 'p',
+    advanceWidth: 512
+});
 
 glyph_p.addContour(new p.Path.Rectangle({
     point: [0, -255],
@@ -103,11 +103,11 @@ demo.addGlyph(glyph_p)
                 <div class="arrow arrow-down-darkpink center"></div>
                 <div class="wrapper center pt100p pb100p pll prl clearfix">
                     <div class="col prm">
-                        <h2>What is Plumin.js ?</h2>
+                        <h2>What is Plumin.js?</h2>
                         <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -> prototypo</p>
                     </div>
                     <div class="col plm">
-                        <h2>What is Prototypo then ?</h2>
+                        <h2>What is Prototypo then?</h2>
                         <p class="grey50 justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="http://prototypo.io" target="_blank" class="pink">prototypo.io</a>.</p>
                     </div>
                 </div>
@@ -115,15 +115,24 @@ demo.addGlyph(glyph_p)
             </div>
         </section>
 
-        <section id="demo" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
-            <div class="wrapper clearfix center pt100p pb50p pll prl">
-                <h1 class="white tsb20 inbl baseline">Demo</h1>
+        <section id="docs" class="line w100" data-90-top="" data-center-bottom="" data-emit-events>
+            <div class="wrapper center pt100p pb50p pll prl">
+                <h1 class="white tsb20 inbl baseline">Docs</h1>
                 <h2 class="white tsb20 inbl baseline mls">- Let's try this out!</h2>
-                <p class="grey50 big">Edit the green values in the code and hit run to see the outcome.</p>
                 <div class="row mtm">
-                     <div class="col w60 rounded bgwhite bsb20 bog10 pam">1
-                    </div>
-                    <div class="col rounded bgwhite bsb20 bog10 mll pam">2
+                    <div class="col w100 rounded bgwhite bsb20 bog10 pam">
+                        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <pre class="mts mbm"><code class="language-javascript">var demo = new p.Font({ familyName: 'Demo' })</code></pre>
+                        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <pre class="mts mbm"><code class="language-javascript">glyph_p = new p.Glyph({
+    name: 'p',
+    advanceWidth: 512
+});</code></pre>
+                        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <pre class="mts mbm"><code class="language-javascript">glyph_p.addContour(new p.Path.Rectangle({
+    point: [0, -255],
+    size: [100, 800]
+}));</code></pre>
                     </div>
                 </div>
             </div>
@@ -135,7 +144,7 @@ demo.addGlyph(glyph_p)
                 <h1 class="white tsb20 inbl baseline">News</h1>
                 <h2 class="white tsb20 inbl baseline mls">- Keep in touch!</h2>
                 <div class="row">
-                    <div class="news-twitter left"><a class="twitter-timeline" href="https://twitter.com/prototypoApp" data-widget-id="545508313639960576">Tweets de @prototypoApp</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <div class="news-twitter left"><a class="twitter-timeline" href="https://twitter.com/prototypoApp" data-widget-id="545874843250733056">Tweets de @prototypoApp</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </div>
                     <div class="news-github rounded bsb20 bog10 right pam">
                         <p class="grey40">Commits github</p>
@@ -145,10 +154,16 @@ demo.addGlyph(glyph_p)
             <div class="arrow arrow-up-pink center"></div>
         </section>
 
-        <section id="links" class="line w100" data-90-top="" data-emit-events>
+        <section id="about" class="line w100" data-90-top="" data-emit-events>
             <div class="wrapper center pt100p pb100p pll prl">
-                <h1 class="white tsb20 inbl baseline">Links</h1>
-                <h2 class="white tsb20 inbl baseline mls">- Follow us!</h2>
+                <h1 class="white tsb20 inbl baseline">About</h1>
+                <h2 class="white tsb20 inbl baseline mls">- Tools and team</h2>
+            </div>
+        </section>
+
+        <section id="footer" class="line w100 bgwhite" data-90-top="" data-emit-events>
+            <div class="wrapper center pt100p pb100p pll prl">
+                <h2 class="inbl baseline mls">footer</h2>
             </div>
         </section>
 
