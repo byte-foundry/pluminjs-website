@@ -64,15 +64,15 @@
                             </ul>
                         </div>
                         <input id="result" type="radio" name="previewtab" hidden />
-                        <div class="pam"><p class="result inbl unselectable">p</p></div>
+                        <div class="pam"><p class="result inbl">p</p></div>
 
                         <input id="source" type="radio" name="previewtab" hidden checked/>
                         <div class="pam">
-                            <pre><code class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
-glyph_p = new p.Glyph({
-    name: 'p',
-    advanceWidth: 512
-});
+                            <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
+    glyph_p = demo.addGlyph(new p.Glyph({
+        name: 'p',
+        advanceWidth: 450
+    }));
 
 glyph_p.addContour(new p.Path.Rectangle({
     point: [0, -255],
@@ -82,15 +82,12 @@ glyph_p.addContour(new p.Path.Ellipse({
     point: [50, 0],
     size: [400, 550]
 }));
-var counter = new p.Path.Ellipse({
+glyph_p.addContour(new p.Path.Ellipse({
     point: [100, 100],
     size: [250, 350]
-});
-counter.reverse();
-glyph_p.addContour(counter);
+})).reverse();
 
-demo.addGlyph(glyph_p)
-    .prepareOT()
+demo.prepareOT()
     .addToFonts();</code></pre>
                         </div>
                     </div>

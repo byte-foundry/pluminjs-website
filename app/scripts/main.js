@@ -1,18 +1,16 @@
-(function() {
+(function(p) {
     'use strict';
 
-    var texts = ['using javascript.', 'like there\'s no tomorrow.', 'like no one\'s watching. '],
-        i = 0;
-
-    setInterval(function() {
-        i++;
-        $('#swaptext').fadeOut('slow', function() {
-            $('#swaptext').html(texts[i % texts.length]);
-            $('#swaptext').fadeIn('slow');
-        });
-    }, 5000);
-
-    var allowUpdateMenuIndicator = true,
+    var texts = [
+            'using javascript.',
+            'like there\'s no tomorrow.',
+            'like no one\'s watching.',
+            'like no one else.',
+            'like crazy.',
+            'like a boss.'
+        ],
+        i = 0,
+        allowUpdateMenuIndicator = true,
         currentSectionId;
 
     function updateMenuIndicator( sectionId ) {
@@ -30,7 +28,8 @@
     }
 
     $(function() {
-        // set defaults
+        // source need to be visible by default for prism
+        // once prism has done its job, result should be displayed
         $('#result').prop('checked', true);
 
         skrollr.init({
@@ -41,14 +40,12 @@
             }
         });
 
-        /*if ( window.location.hash !== '' ) {
-            setTimeout(function() {
-                $(document.body).animate({
-                    scrollTop: $(window.location.hash).offset().top - scrollAdjust
-                }, 200);
-            }, 1000);
+        p.setup({
+            width: 1024,
+            height: 1024
+        });
 
-        }*/
+        (new Function('p', $('#simple-code').html()))(p);
     });
 
     $(document).on('click', '#header a', function() {
@@ -76,4 +73,13 @@
     $(window).on('resize', $.debounce(300, function() {
         updateMenuIndicator(currentSectionId);
     }));
-})();
+
+    setInterval(function() {
+        i++;
+        $('#swaptext').fadeOut('slow', function() {
+            $('#swaptext').html(texts[i % texts.length]);
+            $('#swaptext').fadeIn('slow');
+        });
+    }, 5000);
+
+})(plumin);

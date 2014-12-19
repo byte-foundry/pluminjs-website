@@ -38,7 +38,7 @@ img {
 
 code[class*="language-"],
 pre[class*="language-"] {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.2;
     margin: 0;
 }
@@ -236,9 +236,11 @@ pre.mts.mbm {
 }
 
 p.result {
+    width: 100%;
+    text-align: center;
+
     font-family: 'Demo', sans-serif;
     font-size: 20em;
     line-height: normal;
-    margin-top: -50px;
-    text-indent: 125px;
+    margin-top: 50px;
 }

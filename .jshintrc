@@ -18,8 +18,7 @@
   "devel": true,
   "globals": {
     "$": false,
-    "xtag": false,
     "skrollr": false,
-    "request": false
+    "plumin": false
   }
 }
