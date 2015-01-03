@@ -82,4 +82,13 @@
         });
     }, 5000);
 
+    // github commits
+    $('#commits').commitment({
+        user: 'byte-foundry',
+        repo: 'plumin.js',
+        showCommitDate: true,
+        makeCommitLink: true,
+        showCommitterAvatar: false
+    });
+      
 })(plumin);
