@@ -88,7 +88,7 @@
         repo: 'plumin.js',
         showCommitDate: true,
         makeCommitLink: true,
-        showCommitterAvatar: false
+        showCommitterAvatar: true
     });
       
 })(plumin);
