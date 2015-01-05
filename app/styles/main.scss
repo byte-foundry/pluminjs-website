@@ -3,6 +3,7 @@
 // generic rules
 
 body {
+    color: $black;
     background-color: $black;
 }
 
@@ -64,10 +65,18 @@ input[name$="tab"]:checked + * {
 
 .desc  {
     background: linear-gradient($white, $grey10);
+
+    a[target="_blank"] {
+        color: $pink;
+    }
 }
 
 .docs {
     background: linear-gradient($grey, $darkgrey);
+
+    a[target="_blank"] {
+        color: $cyan;
+    }
 }
 
 .news {
