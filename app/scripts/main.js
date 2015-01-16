@@ -90,5 +90,9 @@
         makeCommitLink: true,
         showCommitterAvatar: true
     });
+
+    var d = new Date();
+    var year = d.getFullYear();
+    $('#year').append(year);
       
 })(plumin);

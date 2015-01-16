@@ -5,6 +5,8 @@
 body {
     color: $black;
     background-color: $black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -55,16 +57,21 @@ input[name$="tab"]:checked + * {
 /*      SECTIONS COLORS      */
 /* ------------------------- */
 
+#header, 
+#header-wrap {
+    z-index: 10;
+}
 #header-wrap {
     background-color: $white;
+    position: relative;
 }
 
 .title {
-    background: linear-gradient($pink, $darkpink);
+    background: linear-gradient($pink, darken($pink,10%) );
 }
 
 .desc  {
-    background: linear-gradient($white, $grey10);
+    background: linear-gradient($white, darken($white,10%) );
 
     a[target="_blank"] {
         color: $pink;
@@ -72,7 +79,7 @@ input[name$="tab"]:checked + * {
 }
 
 .docs {
-    background: linear-gradient($grey, $darkgrey);
+    background: linear-gradient($grey, darken($grey,10%));
 
     a[target="_blank"] {
         color: $cyan;
@@ -80,11 +87,16 @@ input[name$="tab"]:checked + * {
 }
 
 .news {
-    background: linear-gradient($cyan, $darkcyan);
+    background: linear-gradient($cyan, darken($cyan,10%));
 }
 
 .about {
-    background: linear-gradient($pink, $darkpink);
+    background: linear-gradient($pink, darken($pink,10%));
+    color: white;
+    a {
+        text-decoration: underline !important;
+        color: $white;
+    }
 }
 
 #titletext {
@@ -104,11 +116,6 @@ input[name$="tab"]:checked + * {
         size: contain;
         repeat: no-repeat;
     }
-}
-
-#header-wrap {
-    position: relative;
-    z-index: 10;
 }
 
 #menu-indicator  {
@@ -161,6 +168,14 @@ input[name$="tab"]:checked + * {
 
 .news-github {
     background-color: $white;
+    position: relative;
+    z-index: 0;
+    .fork {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        z-index: 1;
+    }
 }
 
 .phome {
@@ -186,7 +201,7 @@ input[name$="tab"]:checked + * {
     border-right: 30px solid transparent;
 
     &.down-darkpink {
-        border-top: 30px solid $darkpink;
+        border-top: 30px solid darken($pink,10%);
     }
 
     &.up-grey {
@@ -194,7 +209,7 @@ input[name$="tab"]:checked + * {
     }
 
     &.down-darkgrey {
-        border-top: 30px solid $darkgrey;
+        border-top: 30px solid darken($grey,10%);
     }
 
     &.up-pink {
@@ -254,4 +269,19 @@ p.result {
     font-size: 20em;
     line-height: normal;
     margin-top: 50px;
+}
+
+.people {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    border-radius: 50%;
+    background-color: white;
+    margin: 3em auto;
+    margin-top: 5em;
+    border: 12px solid white;
+    &.big {
+        height: 220px;
+        width: 220px;
+    }
 }

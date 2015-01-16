@@ -76,16 +76,16 @@
     }));
 
 glyph_p.addContour(new p.Path.Rectangle({
-    point: [0, -255],
-    size: [100, 800]
+    point: [0, -190],
+    size: [100, 740]
 }));
 glyph_p.addContour(new p.Path.Ellipse({
     point: [50, 0],
-    size: [400, 550]
+    size: [415, 550]
 }));
 glyph_p.addContour((new p.Path.Ellipse({
     point: [100, 100],
-    size: [250, 350]
+    size: [265, 350]
 })).reverse());
 
 demo.prepareOT()
@@ -135,6 +135,7 @@ demo.prepareOT()
                             </p>
                         </div>
                     </div>
+                    <div class="h3-like txtcenter mbl mtm"><a href="https://github.com/byte-foundry/plumin.js">> Download Plumin.js <</a></div>
                 </div>
                 <div class="arrow up-grey center"></div>
             </div>
@@ -186,10 +187,13 @@ demo.prepareOT()
                     </script>
                     </div>
                     <div class="news-github rounded bsb20 bog10 right pam">
+                        <a href="https://github.com/byte-foundry/plumin.js">
+                            <img src="./img/fork.gif" alt="" class="fork">
+                        </a>
                         <p class="grey40 feed">
                             <a href="https://github.com/byte-foundry/plumin.js">
                                 <img class="mrs" src="./img/bytefoundry.png" alt="Byte-Foundry">
-                                Commits github
+                                Last commits
                             </a>
                         </p>
                         <div class="mtm" id="commits"></div>
@@ -204,12 +208,89 @@ demo.prepareOT()
             <div class="wrapper center pt100p pb100p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">About</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Tools and team</h2>
+                <div>
+                    <div class="autogrid2">
+                        <div>
+                            <a href="http://nodebox.github.io/opentype.js/" target="_blank">
+                                <div class="people big"
+                                    style="background-image:url('img/opentypejs.png')";>
+                                </div>
+                            </a>
+                            <div class="mam">
+                                <h3 class="txtcenter">opentype.js</h3>
+                                <p>
+                                    "opentype.js is an OpenType and TrueType font parser. It allows you to access the letterforms of text from the browser or node.js." Once you have the shapes, you can manipulate Béziers curves and create new fonts.
+                                </p>
+                                <p class="mts">
+                                    — by <a href="https://twitter.com/enigmeta" target="_blank">Frederik De Bleser</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://paperjs.org" target="_blank">
+                                <div class="people big"
+                                    style="background-image:url('img/paper-js.gif')";>
+                                </div>
+                            </a>
+                            <div class="mam">
+                                <h3 class="txtcenter">Paper.js</h3>
+                                <p>
+                                    "Paper.js is an open source vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / Document Object Model and a lot of powerful functionality to create and work with vector graphics and bezier curves."
+                                </p>
+                                <p class="mts">
+                                    — by <a href="http://twitter.com/juerglehni" target="_blank">Jürg Lehni</a> & <a href="https://twitter.com/jonathanpuckey" target="_blank">Jonathan Puckey</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="autogrid3">
+                        <div class="bio">
+                            <a href="http://twitter.com/louis_remi" target="_blank">
+                                <div class="people" 
+                                    style="background-image:url('https://avatars1.githubusercontent.com/u/39374')";>
+                                </div>
+                            </a>
+                            <div>
+                                <p class="mas">
+                                    <a href="http://twitter.com/louis_remi" target="_blank">Louis-Rémi</a> is is the developper of Prototypo. His experiences led him to work on open source projects such as major jQuery and Mozilla.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bio">
+                            <a href="http://twitter.com/_____________y" target="_blank">
+                                <div class="people" 
+                                    style="background-image:url('https://avatars3.githubusercontent.com/u/859119')";>
+                                </div>
+                            </a>
+                            <div>
+                                <p class="mas">
+                                    <a href="http://twitter.com/_____________y" target="_blank">Yannick Mathey</a> is the designer and front-developper of Prototypo. His areas of expertise include small and medium enterprises and cultural institutions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bio">
+                            <a href="https://twitter.com/ashugeo" target="_blank">
+                                <div class="people" 
+                                    style="background-image:url('https://avatars1.githubusercontent.com/u/10208811')";>
+                                </div>
+                            </a>
+                            <div>
+                                <p class="mas">
+                                    <a href="https://twitter.com/ashugeo" target="_blank">Hugo Sainte-Marie</a> is a graphic designer and studies at <a href="http://www.designvillefontaine.com/" target="_blank">Villefontaine's art school.</a> He joined the team for an internship in December 2015. Thanks Hugo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="footer" class="line w100 bgwhite">
             <div class="wrapper center pt100p pb100p pll prl">
-                <h2 class="inbl valign-baseline mls">footer</h2>
+                <div class="txtcenter">
+                    <div class="mal mts"><img src="./img/bytefoundry.png" alt="Byte-Foundry"></div>
+                    © Byte Foundry <span id="year"></span> | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love
+                </div>
             </div>
         </section>
 
