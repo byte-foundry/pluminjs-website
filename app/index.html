@@ -72,21 +72,20 @@
                             <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
     glyph_p = demo.addGlyph(new p.Glyph({
         name: 'p',
-        advanceWidth: 450
-    }));
+        advanceWidth: 450 }));
 
-glyph_p.addContour(new p.Path.Rectangle({
-    point: [0, -190],
-    size: [100, 740]
-}));
-glyph_p.addContour(new p.Path.Ellipse({
-    point: [50, 0],
-    size: [415, 550]
-}));
-glyph_p.addContour((new p.Path.Ellipse({
-    point: [100, 100],
-    size: [265, 350]
-})).reverse());
+glyph_p.addContour( new p.Path.Rectangle({
+        point: [0, -255],
+        size: [100, 800]
+    }) );
+glyph_p.addContour( new p.Path.Ellipse({
+        point: [50, 0],
+        size: [400, 550]
+    }) );
+glyph_p.addContour( new p.Path.Ellipse({
+        point: [100, 100],
+        size: [250, 350]
+    }) ).reverse();
 
 demo.prepareOT()
     .addToFonts();</code></pre>
@@ -135,7 +134,7 @@ demo.prepareOT()
                             </p>
                         </div>
                     </div>
-                    <div class="h3-like txtcenter mbl mtm"><a href="https://github.com/byte-foundry/plumin.js">> Download Plumin.js <</a></div>
+                    <div class="h3-like txtcenter mbl mtm"><a href="https://github.com/byte-foundry/plumin.js/archive/master.zip">> Download Plumin.js <</a></div>
                 </div>
                 <div class="arrow up-grey center"></div>
             </div>
@@ -145,25 +144,71 @@ demo.prepareOT()
             <div id="docs" class="anchor"></div>
             <div class="wrapper center pt50p pb50p pll prl">
                 <h1 class="white tsb20 inbl valign-baseline">Docs</h1>
-                <h2 class="white tsb20 inbl valign-baseline mls">- Let's get started!</h2>
+                <!-- <h2 class="white tsb20 inbl valign-baseline mls">- Let's get started!</h2> -->
                 <div class="row mtm">
                     <div class="col mw944p rounded bgwhite bsb20 bog10 pam">
+                        <h3>Getting started</h3>
                         <p class="small">
-                            Plumin.js can be installed using <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">NPM</a>
+                            You can try Plumin.js right now in your browser using this <a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Plunker template</a>.
+                            When you feel ready to use it on your own site, you can <a href="https://github.com/byte-foundry/plumin.js/archive/master.zip" target="_blank">download it</a>
+                            or install it using <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">NPM</a>
                             or <a href="http://bower.io/" target="_blank">Bower</a>.
-                            You can also try it right now in your browser using this Plunker template.
                         </p>
-                        <pre class="mts mbm"><code class="language-bash">var demo = new p.Font({ familyName: 'Demo' })</code></pre>
-                        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                        <pre class="mts mbm"><code class="language-javascript">glyph_p = new p.Glyph({
-    name: 'p',
-    advanceWidth: 512
-});</code></pre>
-                        <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                        <pre class="mts mbm"><code class="language-javascript">glyph_p.addContour(new p.Path.Rectangle({
+
+                        <h3>API reference</h3>
+                        <p class="small">
+                            The API is <a href="http://paperjs.org/reference" target="_blank">the same one as Paper.js</a>,
+                            augmented with two font oriented types: Font and Glyph.
+                            A complete documentation will be available when those types
+                            <a href="https://github.com/paperjs/paper.js/issues/561" target="_blank">get merged</a> into Paper.js.
+                            In the meantime we provide annotated code samples for basic use below,
+                            as well as code to use it <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.html#L253" target="_blank">in a WebWorker</a>
+                            or <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.js" target="_blank">in Node.js</a>.
+                        </p>
+
+                        <pre class="mts mbm"><code class="language-javascript">// plumin.paper is aliased to the variable p, for conciseness
+(function(p) {
+'use strict';
+
+// Setup paper.js by providing a canvas element
+p.setup( document.getElementById('canvas') );
+
+// create a new font and specify its name
+var demo = new p.Font({ familyName: 'Demo' }),
+    // create the glyph 'p' and add it directly to the demo font
+    glyph_p = demo.addGlyph(new p.Glyph({
+        name: 'p',
+        advanceWidth: 450
+    }));
+
+// create a rectangular path to form the stem
+glyph_p.addContour(new p.Path.Rectangle({
     point: [0, -255],
     size: [100, 800]
-}));</code></pre>
+}));
+// create an ellipse for the bowl
+glyph_p.addContour(new p.Path.Ellipse({
+    point: [50, 0],
+    size: [400, 550]
+}));
+// and another one for the counter
+glyph_p.addContour(new p.Path.Ellipse({
+    point: [100, 100],
+    size: [250, 350]
+// reverse this path to create a hole in the previous paths
+})).reverse();
+
+    // create or update the binary data of the OpenType font
+demo.prepareOT()
+    // make it available in the page as a font-face
+    .addToFonts();
+
+// After .prepareOT(), the font is ready to download
+document.getElementById('download').onclick = function() {
+    demo.download();
+};
+
+})(plumin.paper);</code></pre>
                     </div>
                 </div>
             </div>
@@ -219,7 +264,10 @@ demo.prepareOT()
                             <div class="mam">
                                 <h3 class="txtcenter">opentype.js</h3>
                                 <p>
-                                    "opentype.js is an OpenType and TrueType font parser. It allows you to access the letterforms of text from the browser or node.js." Once you have the shapes, you can manipulate Béziers curves and create new fonts.
+                                    "opentype.js is an OpenType and TrueType font parser.
+                                    It allows you to access the letterforms of text from the browser or node.js."
+                                    It can also be used to modify glyphs or create new ones,
+                                    and is able to export the corresponding OpenType fonts.
                                 </p>
                                 <p class="mts">
                                     — by <a href="https://twitter.com/enigmeta" target="_blank">Frederik De Bleser</a>
@@ -235,10 +283,13 @@ demo.prepareOT()
                             <div class="mam">
                                 <h3 class="txtcenter">Paper.js</h3>
                                 <p>
-                                    "Paper.js is an open source vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / Document Object Model and a lot of powerful functionality to create and work with vector graphics and bezier curves."
+                                    "Paper.js is an open source vector graphics scripting framework that runs on top of the HTML5 Canvas.
+                                    It offers a clean Scene Graph / Document Object Model and a lot of powerful functionality to create
+                                    and work with vector graphics and bezier curves."
                                 </p>
                                 <p class="mts">
-                                    — by <a href="http://twitter.com/juerglehni" target="_blank">Jürg Lehni</a> & <a href="https://twitter.com/jonathanpuckey" target="_blank">Jonathan Puckey</a>
+                                    — by <a href="http://twitter.com/juerglehni" target="_blank">Jürg Lehni</a>
+                                    &amp; <a href="https://twitter.com/jonathanpuckey" target="_blank">Jonathan Puckey</a>
                                 </p>
                             </div>
                         </div>
@@ -246,37 +297,42 @@ demo.prepareOT()
                     <div class="autogrid3">
                         <div class="bio">
                             <a href="http://twitter.com/louis_remi" target="_blank">
-                                <div class="people" 
+                                <div class="people"
                                     style="background-image:url('https://avatars1.githubusercontent.com/u/39374')";>
                                 </div>
                             </a>
                             <div>
                                 <p class="mas">
-                                    <a href="http://twitter.com/louis_remi" target="_blank">Louis-Rémi</a> is is the developper of Prototypo. His experiences led him to work on open source projects such as major jQuery and Mozilla.
+                                    <a href="http://twitter.com/louis_remi" target="_blank">Louis-Rémi</a> is the developper of Prototypo.
+                                    He enjoys working on open-source software. You can find bits from him in jQuery and Mozilla projects.
                                 </p>
                             </div>
                         </div>
                         <div class="bio">
                             <a href="http://twitter.com/_____________y" target="_blank">
-                                <div class="people" 
+                                <div class="people"
                                     style="background-image:url('https://avatars3.githubusercontent.com/u/859119')";>
                                 </div>
                             </a>
                             <div>
                                 <p class="mas">
-                                    <a href="http://twitter.com/_____________y" target="_blank">Yannick Mathey</a> is the designer and front-developper of Prototypo. His areas of expertise include small and medium enterprises and cultural institutions.
+                                    <a href="http://twitter.com/_____________y" target="_blank">Yannick Mathey</a> is the designer and
+                                    front-end developper of Prototypo. His areas of expertise include small and medium enterprises and
+                                    cultural institutions.
                                 </p>
                             </div>
                         </div>
                         <div class="bio">
                             <a href="https://twitter.com/ashugeo" target="_blank">
-                                <div class="people" 
+                                <div class="people"
                                     style="background-image:url('https://avatars1.githubusercontent.com/u/10208811')";>
                                 </div>
                             </a>
                             <div>
                                 <p class="mas">
-                                    <a href="https://twitter.com/ashugeo" target="_blank">Hugo Sainte-Marie</a> is a graphic designer and studies at <a href="http://www.designvillefontaine.com/" target="_blank">Villefontaine's art school.</a> He joined the team for an internship in December 2015. Thanks Hugo!
+                                    <a href="https://twitter.com/ashugeo" target="_blank">Hugo Sainte-Marie</a> is a graphic designer studying
+                                    at <a href="http://www.designvillefontaine.com/" target="_blank">Villefontaine's art school.</a>
+                                    He did most of the design and dev on this website. Thanks Hugo!
                                 </p>
                             </div>
                         </div>

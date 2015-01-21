@@ -40,10 +40,9 @@
             }
         });
 
-        p.setup({
-            width: 1024,
-            height: 1024
-        });
+        var canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 1024;
+        p.setup(canvas);
 
         (new Function('p', $('#simple-code').html()))(p);
     });
@@ -91,8 +90,6 @@
         showCommitterAvatar: true
     });
 
-    var d = new Date();
-    var year = d.getFullYear();
-    $('#year').append(year);
-      
+    $('#year').append((new Date()).getFullYear());
+
 })(plumin);
