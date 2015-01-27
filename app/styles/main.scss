@@ -53,11 +53,20 @@ input[name$="tab"]:checked + * {
     display: block;
 }
 
+.fb-like {
+    height: 20px;
+    font-size: 0;
+}
+
+.gh-star {
+    width: 106px;
+}
+
 /* ------------------------- */
 /*      SECTIONS COLORS      */
 /* ------------------------- */
 
-#header, 
+#header,
 #header-wrap {
     z-index: 10;
 }

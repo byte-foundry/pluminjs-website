@@ -26,8 +26,22 @@
     </head>
     <body>
         <!--[if lt IE 10]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="fb-root"></div>
+        <script>
+            /* jshint ignore:start */
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=1398681457099665&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            /* jshint ignore:end */
+        </script>
+
         <section id="header" class="w100 fixed top">
             <div id="header-wrap">
                 <div class="wrapper center txtcenter large-txtleft ptm pbs pll prl">
@@ -55,7 +69,18 @@
                     <div id="titletext" class="mod large-col large-w50 txtcenter large-txtleft center">
                         <h1 class="white tsb20">Plumin.js</h1>
                         <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript.</span></h2>
+                        <div>
+                            <iframe class="gh-star" src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                            <a href="https://twitter.com/share" class="twitter-share-button" data-via="prototypoApp">Tweet</a>
+                            <script>
+                                /* jshint ignore:start */
+                                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                                /* jshint ignore:end */
+                            </script>
+                            <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                        </div>
                     </div>
+
                     <div class="center mod large-col large-w50 phome bgwhite rounded bsb20 bog10 mw472p">
                         <div class="clearfix">
                             <ul class="right">
@@ -72,22 +97,23 @@
                             <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
     glyph_p = demo.addGlyph(new p.Glyph({
         name: 'p',
+        unicode: 'p',
         advanceWidth: 450 }));
 
 glyph_p.addContour( new p.Path.Rectangle({
         point: [0, -255],
         size: [100, 800]
-    }) );
+    }));
 glyph_p.addContour( new p.Path.Ellipse({
         point: [50, 0],
         size: [400, 550]
-    }) );
+    }));
 glyph_p.addContour( new p.Path.Ellipse({
         point: [100, 100],
         size: [250, 350]
-    }) ).reverse();
+    })).reverse();
 
-demo.prepareOT()
+demo.updateOTCommands()
     .addToFonts();</code></pre>
                         </div>
                     </div>
@@ -123,7 +149,7 @@ demo.prepareOT()
                         <div class="grey50 justify center large-left">
                             <p class="mbs">
                                 Plumin.js is a work in progress and should be considered in alpha state
-                                (it still lacks OpenType import and UFO import/export).
+                                (it still lacks UFO support and proper documentation).
                                 It's a Free and Open-Source Software, MIT licensed and hosted on <a href="https://github.com/byte-foundry/plumin.js" target="_blank">Github</a>
                                 (a cozy place where free-range code thrives, and <a href="https://github.com/byte-foundry/plumin.js/issues" target="_blank">bugs are hunted down</a>).
                             </p>
@@ -149,21 +175,26 @@ demo.prepareOT()
                     <div class="col mw944p rounded bgwhite bsb20 bog10 pam">
                         <h3>Getting started</h3>
                         <p class="small">
-                            You can try Plumin.js right now in your browser using this <a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Plunker template</a>.
-                            When you feel ready to use it on your own site, you can <a href="https://github.com/byte-foundry/plumin.js/archive/master.zip" target="_blank">download it</a>
-                            or install it using <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">NPM</a>
-                            or <a href="http://bower.io/" target="_blank">Bower</a>.
+                            Try Plumin.js <a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">in your browser</a>,
+                            then <a href="https://github.com/byte-foundry/plumin.js/archive/master.zip" target="_blank">download it</a>
+                            or install it using <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">NPM</a>.
                         </p>
 
                         <h3>API reference</h3>
                         <p class="small">
-                            The API is <a href="http://paperjs.org/reference" target="_blank">the same one as Paper.js</a>,
-                            augmented with two font oriented types: Font and Glyph.
-                            A complete documentation will be available when those types
-                            <a href="https://github.com/paperjs/paper.js/issues/561" target="_blank">get merged</a> into Paper.js.
-                            In the meantime we provide annotated code samples for basic use below,
-                            as well as code to use it <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.html#L253" target="_blank">in a WebWorker</a>
-                            or <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.js" target="_blank">in Node.js</a>.
+                            <b>
+                                We need help getting Font and Glyph types merged into Paper.js and properly documented.
+                            </b>
+                            <a href="mailto:contact@prototypo.io" target="_blank">Get in touch</a> if you want to give a hand!
+                        </p>
+
+                        <p class="small">
+                            In the meantime, use the existing <a href="http://paperjs.org/reference" target="_blank">Paper.js reference</a>,
+                            read <a href="https://github.com/byte-foundry/plumin.js/tree/master/src" target="_blank">Plumin.js sources</a>
+                            and the demos we've built
+                            (using <a href="http://byte-foundry.github.io/plumin.js/index.html" target="_blank">requestAnimationFrame and WebWorker</a>,
+                            using <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.js" target="_blank">Node.js</a>,
+                            using <a href="http://byte-foundry.github.io/plumin.js/interpolate.html" target="_blank">interpolation</a>).
                         </p>
 
                         <pre class="mts mbm"><code class="language-javascript">// plumin.paper is aliased to the variable p, for conciseness
@@ -178,6 +209,7 @@ var demo = new p.Font({ familyName: 'Demo' }),
     // create the glyph 'p' and add it directly to the demo font
     glyph_p = demo.addGlyph(new p.Glyph({
         name: 'p',
+        unicode: 'p',
         advanceWidth: 450
     }));
 
@@ -199,7 +231,7 @@ glyph_p.addContour(new p.Path.Ellipse({
 })).reverse();
 
     // create or update the binary data of the OpenType font
-demo.prepareOT()
+demo.updateOTCommands()
     // make it available in the page as a font-face
     .addToFonts();
 
