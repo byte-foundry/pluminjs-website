@@ -4,6 +4,7 @@ node_js:
 before_install:
 - npm install -g gulp-cli bower
 after_script:
+- bower install
 - gulp build
 - gulp publish
 env:
