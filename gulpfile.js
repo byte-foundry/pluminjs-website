@@ -32,7 +32,8 @@ gulp.task('html', ['styles'], function () {
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    // rev-all plugin is incompatible with minifyHTML :-(
+    //.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
@@ -47,7 +48,7 @@ gulp.task('images', function () {
 
 gulp.task('fonts', function () {
   return gulp.src(require('main-bower-files')().concat('app/fonts/**/*'))
-    .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
+    .pipe($.filter('**/*.{eot,svg,ttf,woff,otf}'))
     .pipe($.flatten())
     .pipe(gulp.dest('dist/fonts'));
 });
@@ -60,6 +61,14 @@ gulp.task('extras', function () {
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('worker', function() {
+  return gulp.src([
+    'app/scripts/worker.js',
+    'bower_components/plumin.js/dist/plumin.min.js',
+    'bower_components/plumin.js/dist/plumin.js.map'
+  ]).pipe(gulp.dest('dist/scripts/'));
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
@@ -115,7 +124,41 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('publish', function() {
+  // when this task is run by TravisCI, make sure we are on correct repo and branch
+  if ( process.env.TRAVIS && (
+      process.env.TRAVIS_BRANCH !== 'master' ||
+      process.env.TRAVIS_REPO_SLUG !== 'byte-foundry/pluminjs-website' )) {
+    return;
+  }
+
+  var aws = {
+      key: process.env.AWS_ACCESS_KEY_ID,
+      secret: process.env.AWS_SECRET_ACCESS_KEY,
+      bucket: 'pluminjs.com',
+      region: 'eu-west-1',
+      distributionId: 'E1EQHSEAZULCW8'
+    },
+    publisher = $.awspublish.create(aws),
+    headers = {
+      'Cache-Control': 'max-age=315360000, no-transform, public'
+    };
+
+  return gulp.src('./dist/**')
+    .pipe($.revAll({ ignore: [
+      'scripts/plumin.js.map',
+      'scripts/plumin.min.js',
+      'scripts/worker.js',
+      '.otf'
+    ]}))
+    .pipe($.awspublish.gzip())
+    .pipe(publisher.publish(headers))
+    .pipe(publisher.cache())
+    .pipe($.awspublish.reporter())
+    .pipe($.cloudfront(aws));
+});
+
+gulp.task('build', [/*'jshint',*/ 'html', 'images', 'fonts', 'extras', 'worker'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

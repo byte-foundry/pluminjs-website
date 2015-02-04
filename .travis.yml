@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- npm install -g gulp-cli bower
+after_script:
+- gulp build
+- gulp publish
+env:
+  global:
+  - secure: LlxqNx7MNiw4qeSLcC1PGB+ps1mMvdS0GfgafmIRrcvGULXGlQ8AwraDzYMlGKUTbYWhKTd8E0dsrBaPOlyUjSUDT1oNZBNwUuG3INq/lyxabBLnqf/vT6mabRfV6jbrMtPBJrq4at0A0fBa67hvRfWiqj5uQfhF5uiNjE6Ij6M=
+  - secure: WMdScgp46NxUdSlXLXSrg2kyVvonTFPteEW0S76S5zGJpySTfC0ptggajQdavLBjJkIyJ2+t2hMrDH/gqS8cqLu+xXmeNFvydCzIa9Rd3enCYAn992U/wvJkdoHa0OUYBW7pZA9/R/v/DRRnnm3MQFAdZ7Hc7DzgRqnU4ROPcSk=

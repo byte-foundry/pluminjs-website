@@ -44,7 +44,16 @@
         canvas.width = canvas.height = 1024;
         p.setup(canvas);
 
-        (new Function('p', $('#simple-code').html()))(p);
+        $('.demo-widget code').each(function() {
+            try {
+                (new Function('p', this.textContent ))(p);
+            } catch (e) {}
+        });
+
+        $('#flake').click(function() {
+            flake();
+            return false;
+        });
     });
 
     $(document).on('click', '#header a', function() {
@@ -53,7 +62,7 @@
         updateMenuIndicator(idSectionCible);
         allowUpdateMenuIndicator = false;
 
-        $(document.body).stop().animate({
+        $('html,body').stop().animate({
             scrollTop: $(idSectionCible).offset().top
 
         }, 1000, function() {
@@ -84,7 +93,8 @@
     // github commits
     $('#commits').commitment({
         user: 'byte-foundry',
-        repo: 'plumin.js',
+        // split the repo name otherwise it gets rewritten by gulp-rev-all
+        repo: 'plumin' + '.js',
         showCommitDate: true,
         makeCommitLink: true,
         showCommitterAvatar: true

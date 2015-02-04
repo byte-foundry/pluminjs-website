@@ -42,13 +42,13 @@
             /* jshint ignore:end */
         </script>
 
-        <section id="header" class="w100 fixed top">
+        <section id="header" class="w100 fixed top tiny-hidden small-hidden">
             <div id="header-wrap">
-                <div class="wrapper center txtcenter large-txtleft ptm pbs pll prl">
+                <div class="wrapper center txtcenter large-txtleft ptm pbs small-pan tiny-pan">
                     <a href="/">
-                        <div class="logo inbl"></div>
+                        <div class="logo inbl mbs medium-man large-man  "></div>
                     </a>
-                    <ul class="mod center large-right unstyled nav big mt30p";>
+                    <ul class="mod center large-right unstyled pan nav big mt30p small-man tiny-man";>
                         <li class="left mrm"><a href="#home" class="a-home nav-active grey40">Home</a></li>
                         <li class="left mll mrm"><a href="#docs" class="a-docs grey40">Docs</a></li>
                         <li class="left mll mrm"><a href="#news" class="a-news grey40">News</a></li>
@@ -62,115 +62,205 @@
             </div>
         </section>
 
-        <section class="home w100 mt90p" data-90-top="" data-center-bottom="" data-emit-events>
+        <section class="home w100 mt90p tiny-man small-man" data-90-top="" data-center-bottom="" data-emit-events>
             <div id="home" class="anchor"></div>
             <div class="title">
-                <div class="wrapper row center pt100p pb100p pll prl">
-                    <div id="titletext" class="mod large-col large-w50 txtcenter large-txtleft center">
-                        <h1 class="white tsb20">Plumin.js</h1>
-                        <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript.</span></h2>
-                        <div>
-                            <iframe class="gh-star" src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-                            <a href="https://twitter.com/share" class="twitter-share-button" data-via="prototypoApp">Tweet</a>
-                            <script>
-                                /* jshint ignore:start */
-                                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-                                /* jshint ignore:end */
-                            </script>
-                            <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <div class="wrapper center">
+                    <div class="flex flex-h pt100p pb100p">
+
+                        <div id="titletext" class="w100 large-w50 txtcenter large-txtleft center mauto pbl">
+                            <h1 class="white tsb20">Plumin.js</h1>
+                            <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript.</span></h2>
+                            <div class="social-like">
+                                <iframe class="gh-star" src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="prototypoApp">Tweet</a>
+                                <script>
+                                    /* jshint ignore:start */
+                                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                                    /* jshint ignore:end */
+                                </script>
+                                <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="center mod large-col large-w50 phome bgwhite rounded bsb20 bog10 mw472p">
-                        <div class="clearfix">
-                            <ul class="right">
-                                <li class="inbl"><label class="result label-active" for="result">Result</label></li
-                                ><li class="inbl"><label for="source">Source</label></li
-                                ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit</a></li>
-                            </ul>
+                        <form id="demo-0" class="w100 center large-w50">
+                            <div class="demo-widget center bgwhite rounded bsb20 bog10 mw472p">
+                                <div class="clearfix">
+                                    <ul class="right">
+                                        <li class="inbl"><label class="result label-active" for="result-0">Result</label></li
+                                        ><li class="inbl"><label for="source-0">Source</label></li
+                                        ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit 🡆</a></li>
+                                    </ul>
+                                </div>
+                                <input id="result-0" type="radio" name="demo-0-tab" hidden checked="checked"/>
+                                <div class="pam"><p class="result inbl" style="font-family: 'Dem0', sans;">p</p></div>
+
+                                <input id="source-0" type="radio" name="demo-0-tab" hidden />
+                                <div class="pam">
+                                    <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Dem0' }),
+        glyph_p = demo.addGlyph(new p.Glyph({
+            name: 'p',
+            unicode: 'p',
+            advanceWidth: 450 }));
+
+    glyph_p.addContour( new p.Path.Rectangle({
+            point: [0, -255],
+            size: [100, 800]
+        }));
+    glyph_p.addContour( new p.Path.Ellipse({
+            point: [50, 0],
+            size: [400, 550]
+        }));
+    glyph_p.addContour( new p.Path.Ellipse({
+            point: [100, 100],
+            size: [250, 350]
+        })).reverse();
+
+    demo.updateOTCommands()
+        .addToFonts();</code></pre>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div><!-- .flex -->
+                </div><!-- .wrapper.center -->
+            </div>
+
+            <div class="desc">
+                <div class="wrapper center">
+                    <div class="arrow down-darkpink center"></div>
+                    <div class="flex flex-h pt100p pb100p">
+
+                        <form id="demo-1" class="w100 large-w50 pam">
+                            <div class="demo-widget center bgwhite rounded bsb20 bog10 mw472p">
+                                <div class="clearfix">
+                                    <ul class="right">
+                                        <li class="inbl"><label class="result label-active" for="result-1">Result</label></li
+                                        ><li class="inbl"><label for="source-1">Source</label></li
+                                        ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit 🡆</a></li>
+                                    </ul>
+                                </div>
+                                <input id="result-1" type="radio" name="demo-1-tab" hidden checked="checked"/>
+                                <div class="pam txtcenter">
+                                    <p class="result inbl" style="font-family: 'Dem1', sans;">A</p>
+                                    <div style="position: absolute; left: 0; right: 0; bottom: 30px;">
+                                        <button id="flake" class="btn">Draw me a flake!</button>
+                                    </div>
+                                </div>
+
+                                <input id="source-1" type="radio" name="demo-1-tab" hidden/>
+                                <div class="pam">
+                                    <pre><code class="language-javascript">var demo = new p.Font({
+        familyName: 'Dem1',
+        ascender: 500 }),
+    glyph_A = demo.addGlyph(new p.Glyph({
+        name: 'A', unicode: 'A',
+        advanceWidth: 500 }));
+
+(window.flake = function() {
+  glyph_A.contours = [];
+  glyph_A.addContour(new p.Path.Star({
+    center: [250, 250],
+    points: 3 + ~~( Math.random() * 8 ),
+    radius1: 150 + ( Math.random() * 100 ),
+    radius2: 20 + ( Math.random() * 100 )
+  })).simplify( - Math.random() * 10 );
+
+  demo.updateOTCommands()
+    .addToFonts();
+})();</code></pre>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="w100 large-w50 pam">
+                            <h2 class="txtcenter large-txtleft">What is Plumin.js?</h2>
+                            <div class="grey50 justify center large-left">
+                                <p class="mbs">
+                                    It's a tool to <b>create and manipulate fonts using javascript</b>.
+                                </p>
+                                <p class="mbs">
+                                    We hope that the interactive, connected, hackable nature of the web
+                                    will bring more type-design enthusiasts to font-scripting,
+                                    while enabling new ways to design and use fonts.
+                                </p>
+                                <p class="mbs">
+                                    If you're into analogies and technical details, it intends to be an alternative
+                                    to <a href="http://robofab.org/" target="_blank">RoboFab</a>:
+                                    it's a <b>font-oriented 2D API and scene-graph with OpenType support</b>.
+                                    It's built on top of <a href="http://paperjs.org" target="_blank">paper.js</a>
+                                    and <a href="https://github.com/nodebox/opentype.js" target="_blank">opentype.js</a>.
+                                    It can run in the browser (in a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank">WebWorker</a>
+                                    for optimal performances) or in <a href="http://nodejs.org/" target="_blank">node.js</a>.
+                                </p>
+                            </div>
                         </div>
-                        <input id="result" type="radio" name="previewtab" hidden />
-                        <div class="pam"><p class="result inbl">p</p></div>
 
-                        <input id="source" type="radio" name="previewtab" hidden checked/>
-                        <div class="pam">
-                            <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Demo' }),
-    glyph_p = demo.addGlyph(new p.Glyph({
-        name: 'p',
-        unicode: 'p',
-        advanceWidth: 450 }));
+                        <div class="w100 large-w50 pam">
+                            <h2 class="txtcenter large-txtleft">Status</h2>
+                            <div class="grey50 justify center large-left">
+                                <p class="mbs">
+                                    Plumin.js is a work in progress and should be considered in alpha state
+                                    (the API isn't stable nor documented yet).
+                                    It's a Free and Open-Source Software, MIT licensed and hosted on <a href="https://github.com/byte-foundry/plumin.js" target="_blank">Github</a>
+                                    (a cozy place where free-range code thrives, and <a href="https://github.com/byte-foundry/plumin.js/issues" target="_blank">bugs are hunted down</a>).
+                                </p>
+                                <p class="mbs">
+                                    It's developped in parallel with <a href="http://prototypo.io" target="_blank">Prototypo</a>,
+                                    an online app that uses parametric typefaces to design fonts faster.
+                                    You can expect frequent updates and improvements in Plumin.js and upstream projects it uses.
+                                </p>
+                            </div>
+                        </div>
 
-glyph_p.addContour( new p.Path.Rectangle({
-        point: [0, -255],
-        size: [100, 800]
-    }));
-glyph_p.addContour( new p.Path.Ellipse({
-        point: [50, 0],
-        size: [400, 550]
-    }));
-glyph_p.addContour( new p.Path.Ellipse({
-        point: [100, 100],
-        size: [250, 350]
-    })).reverse();
+                        <form id="demo-2" class="w100 large-w50 pam">
+                            <div class="demo-widget center bgwhite rounded bsb20 bog10 mw472p">
+                                <div class="clearfix">
+                                    <ul class="right">
+                                        <li class="inbl"><label class="result label-active" for="result-2">Result</label></li
+                                        ><li class="inbl"><label for="source-2">Source</label></li
+                                        ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit 🡆</a></li>
+                                    </ul>
+                                </div>
+                                <input id="result-2" type="radio" name="demo-2-tab" hidden checked="checked"/>
+                                <div class="pam txtcenter">
+                                    <p class="result inbl" style="font-family: 'Dem2', sans; font-size: 4em; line-height: 1.4;">
+                                        Hamburger
+                                    </p>
+                                    <div style="position: absolute; left: 0; right: 0; bottom: 30px;">
+                                        Light <input id="interpolate-input" step="0.1" min="0" max="1" value="0" type="range" disabled="disabled" style="max-width: 50%;"> Heavy
+                                    </div>
+                                </div>
+
+                                <input id="source-2" type="radio" name="demo-2-tab" hidden/>
+                                <div class="pam">
+                                    <pre><code class="language-javascript">var demo = new p.Font({ familyName: 'Dem2' }),
+    coef = $('#interpolate-slider').val();
+
+// This is a simplified version of the
+// code that powers this demo.
+demo.subset = 'Hamburger';
+demo.interpolate( font0, font1, coef );
 
 demo.updateOTCommands()
-    .addToFonts();</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="desc line w100">
-                <div class="arrow down-darkpink center"></div>
-                <div class="wrapper center pt100p pb50p pll prl clearfix">
-                    <div class="mod large-col large-prm pbl">
-                        <h2 class="txtcenter large-txtleft">What is Plumin.js?</h2>
-                        <div class="grey50 justify center large-left">
-                            <p class="mbs">
-                                It's a tool to <b>create and manipulate fonts using javascript</b>.
-                            </p>
-                            <p class="mbs">
-                                We hope that the interactive, connected, hackable nature of the web
-                                will bring more type-design enthusiasts to font-scripting,
-                                while enabling new ways to design and use fonts.
-                            </p>
-                            <p class="mbs">
-                                If you're into analogies and technical details, it intends to be an alternative
-                                to <a href="http://robofab.org/" target="_blank">RoboFab</a>:
-                                it's a <b>font-oriented 2D API and scene-graph with OpenType export capabilities</b>.
-                                It's built on top of <a href="http://paperjs.org" target="_blank">paper.js</a>
-                                and <a href="https://github.com/nodebox/opentype.js" target="_blank">opentype.js</a>.
-                                It can run in the browser (in a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank">WebWorker</a>
-                                for optimal performances) or in <a href="http://nodejs.org/" target="_blank">node.js</a>.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mod large-col large-plm">
-                        <h2 class="txtcenter large-txtleft">Status</h2>
-                        <div class="grey50 justify center large-left">
-                            <p class="mbs">
-                                Plumin.js is a work in progress and should be considered in alpha state
-                                (it still lacks UFO support and proper documentation).
-                                It's a Free and Open-Source Software, MIT licensed and hosted on <a href="https://github.com/byte-foundry/plumin.js" target="_blank">Github</a>
-                                (a cozy place where free-range code thrives, and <a href="https://github.com/byte-foundry/plumin.js/issues" target="_blank">bugs are hunted down</a>).
-                            </p>
-                            <p class="mbs">
-                                It's developped in parallel with <a href="http://prototypo.io" target="_blank">Prototypo</a>,
-                                an online app that uses parametric typefaces to design fonts faster.
-                                You can expect frequent updates and improvements in Plumin.js and upstream projects it uses.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="h3-like txtcenter mbl mtm"><a href="https://github.com/byte-foundry/plumin.js/archive/master.zip">> Download Plumin.js <</a></div>
-                </div>
+    .addToFonts();
+</code></pre>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div><!-- .flex -->
+                </div><!-- .wrapper.center -->
                 <div class="arrow up-grey center"></div>
             </div>
         </section>
 
         <section class="docs line w100" data-90-top="" data-center-bottom="" data-emit-events>
             <div id="docs" class="anchor"></div>
-            <div class="wrapper center pt50p pb50p pll prl">
+            <div class="wrapper center pt50p pb50p">
                 <h1 class="white tsb20 inbl valign-baseline">Docs</h1>
-                <!-- <h2 class="white tsb20 inbl valign-baseline mls">- Let's get started!</h2> -->
+                <h2 class="white tsb20 inbl valign-baseline mls">- 404 Not Found!</h2>
                 <div class="row mtm">
                     <div class="col mw944p rounded bgwhite bsb20 bog10 pam">
                         <h3>Getting started</h3>
@@ -185,62 +275,19 @@ demo.updateOTCommands()
                             <b>
                                 We need help getting Font and Glyph types merged into Paper.js and properly documented.
                             </b>
-                            <a href="mailto:contact@prototypo.io" target="_blank">Get in touch</a> if you want to give a hand!
+                            <a href="https://gitter.im/byte-foundry/prototypo" target="_blank">Join our chat-room</a> if you want to give a hand!
                         </p>
 
-                        <p class="small">
+                        <p class="small mts">
                             In the meantime, use the existing <a href="http://paperjs.org/reference" target="_blank">Paper.js reference</a>,
                             read <a href="https://github.com/byte-foundry/plumin.js/tree/master/src" target="_blank">Plumin.js sources</a>
-                            and the demos we've built
-                            (using <a href="http://byte-foundry.github.io/plumin.js/index.html" target="_blank">requestAnimationFrame and WebWorker</a>,
-                            using <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.js" target="_blank">Node.js</a>,
-                            using <a href="http://byte-foundry.github.io/plumin.js/interpolate.html" target="_blank">interpolation</a>).
+                            as well as the demos we've built:
+                            <ul class="dash small mtn pln">
+                                <li>using <a href="http://byte-foundry.github.io/plumin.js/index.html" target="_blank">requestAnimationFrame and WebWorker</a>,
+                                <li>using <a href="http://byte-foundry.github.io/plumin.js/interpolate.html" target="_blank">subsetting and interpolation</a>,
+                                <li>using <a href="https://github.com/byte-foundry/plumin.js/blob/master/index.js" target="_blank">Node.js</a>.
+                            </ul>
                         </p>
-
-                        <pre class="mts mbm"><code class="language-javascript">// plumin.paper is aliased to the variable p, for conciseness
-(function(p) {
-'use strict';
-
-// Setup paper.js by providing a canvas element
-p.setup( document.getElementById('canvas') );
-
-// create a new font and specify its name
-var demo = new p.Font({ familyName: 'Demo' }),
-    // create the glyph 'p' and add it directly to the demo font
-    glyph_p = demo.addGlyph(new p.Glyph({
-        name: 'p',
-        unicode: 'p',
-        advanceWidth: 450
-    }));
-
-// create a rectangular path to form the stem
-glyph_p.addContour(new p.Path.Rectangle({
-    point: [0, -255],
-    size: [100, 800]
-}));
-// create an ellipse for the bowl
-glyph_p.addContour(new p.Path.Ellipse({
-    point: [50, 0],
-    size: [400, 550]
-}));
-// and another one for the counter
-glyph_p.addContour(new p.Path.Ellipse({
-    point: [100, 100],
-    size: [250, 350]
-// reverse this path to create a hole in the previous paths
-})).reverse();
-
-    // create or update the binary data of the OpenType font
-demo.updateOTCommands()
-    // make it available in the page as a font-face
-    .addToFonts();
-
-// After .prepareOT(), the font is ready to download
-document.getElementById('download').onclick = function() {
-    demo.download();
-};
-
-})(plumin.paper);</code></pre>
                     </div>
                 </div>
             </div>
@@ -249,48 +296,54 @@ document.getElementById('download').onclick = function() {
         <section class="news line w100" data-90-top="" data-center-bottom="" data-emit-events>
             <div id="news" class="anchor down20p"></div>
             <div class="arrow down-darkgrey center"></div>
-            <div class="wrapper center pt50p pb50p pll prl">
+            <div class="wrapper center pt50p pb50p">
                 <h1 class="white tsb20 inbl valign-baseline">News</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Keep in touch!</h2>
-                <div class="row">
-                    <div class="news-twitter left"><a class="twitter-timeline" href="https://twitter.com/prototypoApp" data-widget-id="545874843250733056">Tweets de @prototypoApp</a>
-                    <script>
-                        /* jshint ignore:start */
-                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=
-                        /^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){
-                        js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                        /* jshint ignore:end */
-                    </script>
+
+                <div class="flex flex-h">
+                    <div class="news-twitter w100 large-w50">
+                        <a class="twitter-timeline" href="https://twitter.com/prototypoApp" data-widget-id="545874843250733056">Tweets de @prototypoApp</a>
+                        <script>
+                            /* jshint ignore:start */
+                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=
+                            /^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){
+                            js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+                            fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                        </script>
                     </div>
-                    <div class="news-github rounded bsb20 bog10 right pam">
-                        <a href="https://github.com/byte-foundry/plumin.js">
-                            <img src="./img/fork.gif" alt="" class="fork">
-                        </a>
-                        <p class="grey40 feed">
-                            <a href="https://github.com/byte-foundry/plumin.js">
-                                <img class="mrs" src="./img/bytefoundry.png" alt="Byte-Foundry">
-                                Last commits
-                            </a>
-                        </p>
-                        <div class="mtm" id="commits"></div>
+
+                    <div class="news-github like-twitter-widget w100 large-w50">
+                        <div class="rounded bsb20 bog10">
+                            <header>
+                                <a href="https://github.com/byte-foundry/plumin.js">
+                                    Commits
+                                </a>
+                                <iframe src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=fork" frameborder="0" scrolling="0" width="53px" height="20px" style="float: right;"></iframe>
+                            </header>
+                            <div id="commits"></div>
+                            <footer>
+                                <a href="https://gitter.im/byte-foundry/prototypo?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank">
+                                    <img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Gitter" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg">
+                                </a>
+                            </footer>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div><!-- .flex -->
+            </div><!-- .wrapper.center -->
             <div class="arrow up-pink center"></div>
         </section>
 
         <section class="about line w100" data-90-top="" data-emit-events>
             <div id="about" class="anchor"></div>
-            <div class="wrapper center pt100p pb100p pll prl">
+            <div class="wrapper center pt100p pb100p">
                 <h1 class="white tsb20 inbl valign-baseline">About</h1>
                 <h2 class="white tsb20 inbl valign-baseline mls">- Tools and team</h2>
                 <div>
-                    <div class="autogrid2">
-                        <div>
+                    <div class="flex flex-h">
+                        <div class="w100 medium-w50 large-w50 center">
                             <a href="http://nodebox.github.io/opentype.js/" target="_blank">
                                 <div class="people big"
-                                    style="background-image:url('img/opentypejs.png')";>
+                                    style="background-image:url('images/opentypejs.png')";>
                                 </div>
                             </a>
                             <div class="mam">
@@ -306,10 +359,10 @@ document.getElementById('download').onclick = function() {
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div class="w100 medium-w50 large-w50 center">
                             <a href="http://paperjs.org" target="_blank">
                                 <div class="people big"
-                                    style="background-image:url('img/paper-js.gif')";>
+                                    style="background-image:url('images/paper-js.gif')";>
                                 </div>
                             </a>
                             <div class="mam">
@@ -325,9 +378,9 @@ document.getElementById('download').onclick = function() {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="autogrid3">
-                        <div class="bio">
+                    </div><!-- .flex.flex-h -->
+                    <div class="flex flex-h">
+                        <div class="bio w100 medium-w33 large-w33 center">
                             <a href="http://twitter.com/louis_remi" target="_blank">
                                 <div class="people"
                                     style="background-image:url('https://avatars1.githubusercontent.com/u/39374')";>
@@ -340,7 +393,7 @@ document.getElementById('download').onclick = function() {
                                 </p>
                             </div>
                         </div>
-                        <div class="bio">
+                        <div class="bio w100 medium-w33 large-w33 center">
                             <a href="http://twitter.com/_____________y" target="_blank">
                                 <div class="people"
                                     style="background-image:url('https://avatars3.githubusercontent.com/u/859119')";>
@@ -354,7 +407,7 @@ document.getElementById('download').onclick = function() {
                                 </p>
                             </div>
                         </div>
-                        <div class="bio">
+                        <div class="bio w100 medium-w33 large-w33 center">
                             <a href="https://twitter.com/ashugeo" target="_blank">
                                 <div class="people"
                                     style="background-image:url('https://avatars1.githubusercontent.com/u/10208811')";>
@@ -368,15 +421,15 @@ document.getElementById('download').onclick = function() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- .flex.flex-h -->
                 </div>
             </div>
         </section>
 
         <section id="footer" class="line w100 bgwhite">
-            <div class="wrapper center pt100p pb100p pll prl">
+            <div class="wrapper center pt100p pb100p">
                 <div class="txtcenter">
-                    <div class="mal mts"><img src="./img/bytefoundry.png" alt="Byte-Foundry"></div>
+                    <div class="mal mts"><img src="./images/bytefoundry.png" alt="Byte-Foundry"></div>
                     © Byte Foundry <span id="year"></span> | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love
                 </div>
             </div>
@@ -390,7 +443,7 @@ document.getElementById('download').onclick = function() {
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            ga('create','UA-41962243-4');ga('send','pageview');
             /* jshint ignore:end */
         </script>
 
@@ -408,6 +461,7 @@ document.getElementById('download').onclick = function() {
         <script src="scripts/debounce-throttle.js"></script>
         <script src="scripts/commitment.min.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/interpolate.js"></script>
         <!-- endbuild -->
     </body>
 </html>
