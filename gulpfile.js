@@ -146,11 +146,13 @@ gulp.task('publish', function() {
 
   return gulp.src('./dist/**')
     .pipe($.revAll({ ignore: [
+      'plumin.js',
       'scripts/plumin.js.map',
       'scripts/plumin.min.js',
       'scripts/worker.js',
       '.otf'
     ]}))
+    //.pipe(gulp.dest('./s3'));
     .pipe($.awspublish.gzip())
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())

@@ -93,8 +93,7 @@
     // github commits
     $('#commits').commitment({
         user: 'byte-foundry',
-        // split the repo name otherwise it gets rewritten by gulp-rev-all
-        repo: 'plumin' + '.js',
+        repo: 'plumin.js',
         showCommitDate: true,
         makeCommitLink: true,
         showCommitterAvatar: true
