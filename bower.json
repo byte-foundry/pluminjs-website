@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "prism": "gh-pages",
-    "plumin.js": "^0.5.0",
+    "plumin.js": "^0.7.0",
     "skrollr": "~0.6.29",
     "jquery": "~2.1.2"
   }
