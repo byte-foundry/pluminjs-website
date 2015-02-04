@@ -37,7 +37,9 @@
                 if (allowUpdateMenuIndicator) {
                     updateMenuIndicator('#' + element.firstElementChild.id);
                 }
-            }
+            },
+            // disable skrollr on mobile
+            mobileCheck: function() { return false; }
         });
 
         var canvas = document.createElement('canvas');

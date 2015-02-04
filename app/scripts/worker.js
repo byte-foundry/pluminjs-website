@@ -6,7 +6,7 @@ var window = self,
 	font1,
 	coef = 0;
 
-importScripts('plumin.min.js');
+importScripts('../bower_components/plumin.js/dist/plumin.min.js');
 
 plumin.paper.setup({
 	width: 1024,

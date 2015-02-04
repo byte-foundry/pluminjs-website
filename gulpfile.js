@@ -66,9 +66,11 @@ gulp.task('extras', function () {
 gulp.task('worker', function() {
   return gulp.src([
     'app/scripts/worker.js',
-    'bower_components/plumin.js/dist/plumin.min.js',
-    'bower_components/plumin.js/dist/plumin.js.map'
-  ]).pipe(gulp.dest('dist/scripts/'));
+    'app/bower_components/plumin.js/dist/plumin.min.js',
+    'app/bower_components/plumin.js/dist/plumin.js.map'
+  ], {
+    base: 'app'
+  }).pipe(gulp.dest('dist/'));
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
@@ -147,8 +149,8 @@ gulp.task('publish', function() {
   return gulp.src('./dist/**')
     .pipe($.revAll({ ignore: [
       'plumin.js',
-      'scripts/plumin.js.map',
-      'scripts/plumin.min.js',
+      'bower_components/plumin.js/dist/plumin.js.map',
+      'bower_components/plumin.js/dist/plumin.min.js',
       'scripts/worker.js',
       '.otf'
     ]}))
