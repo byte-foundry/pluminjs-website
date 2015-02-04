@@ -98,26 +98,26 @@
                                 <input id="source-0" type="radio" name="demo-0-tab" hidden />
                                 <div class="pam">
                                     <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Dem0' }),
-        glyph_p = demo.addGlyph(new p.Glyph({
-            name: 'p',
-            unicode: 'p',
-            advanceWidth: 450 }));
+    glyph_p = demo.addGlyph(new p.Glyph({
+        name: 'p',
+        unicode: 'p',
+        advanceWidth: 450 }));
 
-    glyph_p.addContour( new p.Path.Rectangle({
-            point: [0, -255],
-            size: [100, 800]
-        }));
-    glyph_p.addContour( new p.Path.Ellipse({
-            point: [50, 0],
-            size: [400, 550]
-        }));
-    glyph_p.addContour( new p.Path.Ellipse({
-            point: [100, 100],
-            size: [250, 350]
-        })).reverse();
+glyph_p.addContour( new p.Path.Rectangle({
+        point: [0, -255],
+        size: [100, 800]
+    }));
+glyph_p.addContour( new p.Path.Ellipse({
+        point: [50, 0],
+        size: [400, 550]
+    }));
+glyph_p.addContour( new p.Path.Ellipse({
+        point: [100, 100],
+        size: [250, 350]
+    })).reverse();
 
-    demo.updateOTCommands()
-        .addToFonts();</code></pre>
+demo.updateOTCommands()
+    .addToFonts();</code></pre>
                                 </div>
                             </div>
                         </form>

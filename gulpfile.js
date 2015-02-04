@@ -1,6 +1,6 @@
 /* jshint node:true */
 'use strict';
-// generated on 2014-12-16 using generator-gulp-webapp 0.2.0
+
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
