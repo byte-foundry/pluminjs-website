@@ -54,8 +54,11 @@ function _initWorker() {
 	};
 }
 
+var lastValue = +$('#interpolate-input').val();
 $('#interpolate-input').on('input', function() {
-	worker.postMessage( +this.value );
+	if ( +this.value !== lastValue ) {
+		worker.postMessage( lastValue = +this.value );
+	}
 });
 
 });

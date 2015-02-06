@@ -1,4 +1,8 @@
-var window = self,
+(function() {
+
+'use strict';
+
+var otFont,
 	otFont0,
 	otFont1,
 	font,
@@ -6,7 +10,7 @@ var window = self,
 	font1,
 	coef = 0;
 
-importScripts('../bower_components/plumin.js/dist/plumin.min.js');
+self.importScripts('../bower_components/plumin.js/dist/plumin.min.js');
 
 plumin.paper.setup({
 	width: 1024,
@@ -16,10 +20,10 @@ plumin.paper.setup({
 // Overwrite addToFonts to send the buffer over to the UI
 plumin.paper.Font.prototype.addToFonts = function() {
 	var buffer = this.ot.toBuffer();
-	postMessage( buffer, [buffer] );
+	self.postMessage( buffer, [buffer] );
 };
 
-onmessage = function( message ) {
+self.onmessage = function( message ) {
 	var data = message.data;
 
 	switch ( typeof data ) {
@@ -29,14 +33,15 @@ onmessage = function( message ) {
 			return;
 		}
 
+		otFont = plumin.opentype.parse( data[0] );
 		otFont0 = plumin.opentype.parse( data[0] );
 		otFont1 = plumin.opentype.parse( data[1] );
 
 		font = new plumin.paper.Font();
 		// save default encoding
 		var encoding = font.ot.encoding;
-		font.importOT( otFont0 );
-		font.ot.familyName = 'Demo';
+		font.importOT( otFont );
+		font.ot.familyName = 'Dem2';
 		font.ot.encoding = encoding;
 
 		font0 = new plumin.paper.Font();
@@ -48,6 +53,7 @@ onmessage = function( message ) {
 		font1.ot.familyName = 'font1';
 
 		// initial font
+		font.subset = ' Hamburger';
 		font.updateOTCommands()
 			.addToFonts();
 		break;
@@ -61,3 +67,5 @@ onmessage = function( message ) {
 		break;
 	}
 };
+
+})();

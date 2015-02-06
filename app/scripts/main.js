@@ -47,9 +47,9 @@
         p.setup(canvas);
 
         $('.demo-widget code').each(function() {
-            try {
+            if ( this.id !== 'interpolate-code' ) {
                 (new Function('p', this.textContent ))(p);
-            } catch (e) {}
+            }
         });
 
         $('#flake').click(function() {

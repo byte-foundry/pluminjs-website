@@ -148,6 +148,7 @@ gulp.task('publish', function() {
 
   return gulp.src('./dist/**')
     .pipe($.revAll({ ignore: [
+      'robots.txt',
       'plumin.js',
       'bower_components/plumin.js/dist/plumin.js.map',
       'bower_components/plumin.js/dist/plumin.min.js',
