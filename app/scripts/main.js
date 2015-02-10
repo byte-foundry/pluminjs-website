@@ -13,6 +13,64 @@
         allowUpdateMenuIndicator = true,
         currentSectionId;
 
+    plumin.paper.setup('hidden-canvas');
+
+    var cm = CodeMirror.fromTextArea( document.getElementById('editor-live-demo'), {
+        autoCloseBrackets: true
+    });
+    cm.setSize( '100%', 400 );
+
+    $('textarea.editor').each(function() {
+        if ( this.id === 'editor-live-demo' ) {
+            return;
+        }
+
+        CodeMirror.fromTextArea( this, {
+            readOnly: 'nocursor'
+
+        }).setSize('1OO%', 270);
+    });
+
+    window.runLiveDemo = function(event) {
+        /*jslint evil: true */
+        try {
+            ( new Function( cm.getValue() ) )();
+        } catch(e) {
+            console.error(e);
+        }
+
+        if ( event ) {
+            event.preventDefault();
+        }
+    };
+
+    var demo = new p.Font({
+            familyName: 'Dem1',
+            ascender: 500
+        }),
+        glyph = demo.addGlyph(new p.Glyph({
+            name: 'A', unicode: 'A',
+            advanceWidth: 500
+        }));
+
+    window.drawFlake = function(event) {
+        glyph.contours = [];
+        glyph.addContour(new p.Path.Star({
+            center: [250, 250],
+            points: 3 + Math.round( Math.random() * 8 ),
+            radius1: 150 + ( Math.random() * 100 ),
+            radius2: 20 + ( Math.random() * 100 )
+        })).simplify( - Math.random() * 10 );
+
+        demo.updateOTCommands()
+            .addToFonts();
+
+        if ( event ) {
+            event.preventDefault();
+        }
+    };
+    window.drawFlake();
+
     function updateMenuIndicator( sectionId ) {
         var $menuItem = $('#header a[href=' + sectionId + ']'),
             bbox = $menuItem[0].getBoundingClientRect(),
@@ -45,17 +103,6 @@
         var canvas = document.createElement('canvas');
         canvas.width = canvas.height = 1024;
         p.setup(canvas);
-
-        $('.demo-widget code').each(function() {
-            if ( this.id !== 'interpolate-code' ) {
-                (new Function('p', this.textContent ))(p);
-            }
-        });
-
-        $('#flake').click(function() {
-            flake();
-            return false;
-        });
     });
 
     $(document).on('click', '#header a', function() {

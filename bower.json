@@ -2,9 +2,9 @@
   "name": "pluminjs-website",
   "private": true,
   "dependencies": {
-    "prism": "gh-pages",
     "plumin.js": "^0.7.0",
     "skrollr": "~0.6.29",
-    "jquery": "~2.1.2"
+    "jquery": "~2.1.2",
+    "codemirror": "~4.12.0"
   }
 }

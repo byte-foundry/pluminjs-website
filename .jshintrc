@@ -19,6 +19,7 @@
   "globals": {
     "$": false,
     "skrollr": false,
-    "plumin": false
+    "plumin": false,
+    "CodeMirror": false
   }
 }

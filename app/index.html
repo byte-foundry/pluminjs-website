@@ -7,18 +7,12 @@
         <title>Plumin.js | Create and manipulate fonts using javascript</title>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="ignore" href="bower_components/prism/themes/prism.css" />
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <link rel="stylesheet" href="bower_components/prism/themes/prism-okaidia.css" />
-        <!-- endbuild -->
-
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/knacss/knacss.css">
         <link rel="stylesheet" href="styles/helpers.css">
         <link rel="stylesheet" href="styles/commitment.css">
+        <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
 
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -46,7 +40,7 @@
             <div id="header-wrap">
                 <div class="wrapper center txtcenter large-txtleft ptm pbs small-pan tiny-pan">
                     <a href="/">
-                        <div class="logo inbl mbs medium-man large-man  "></div>
+                        <div class="logo inbl mbs medium-man large-man"></div>
                     </a>
                     <ul class="mod center large-right unstyled pan nav big mt30p small-man tiny-man";>
                         <li class="left mrm"><a href="#home" class="a-home nav-active grey40">Home</a></li>
@@ -65,63 +59,86 @@
         <section class="home w100 mt90p tiny-man small-man" data-90-top="" data-center-bottom="" data-emit-events>
             <div id="home" class="anchor"></div>
             <div class="title">
-                <div class="wrapper center">
-                    <div class="flex flex-h pt100p pb100p">
+                <div class="wrapper center pt100p pb100p">
+                    <div class="flex flex-h">
 
-                        <div id="titletext" class="w100 large-w50 txtcenter large-txtleft center mauto pbl">
-                            <h1 class="white tsb20">Plumin.js</h1>
-                            <h2 class="white tsb20">Create and manipulate fonts<br/><span id="swaptext">using javascript.</span></h2>
-                            <div class="social-like">
-                                <iframe class="gh-star" src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="prototypoApp">Tweet</a>
-                                <script>
-                                    /* jshint ignore:start */
-                                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-                                    /* jshint ignore:end */
-                                </script>
-                                <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-                            </div>
-                        </div>
-
-                        <form id="demo-0" class="w100 center large-w50">
+                        <form id="demo-0" class="center w100 large-w50">
                             <div class="demo-widget center bgwhite rounded bsb20 bog10 mw472p">
-                                <div class="clearfix">
-                                    <ul class="right">
-                                        <li class="inbl"><label class="result label-active" for="result-0">Result</label></li
-                                        ><li class="inbl"><label for="source-0">Source</label></li
-                                        ><li class="inbl"><a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">Edit 🡆</a></li>
-                                    </ul>
-                                </div>
-                                <input id="result-0" type="radio" name="demo-0-tab" hidden checked="checked"/>
-                                <div class="pam"><p class="result inbl" style="font-family: 'Dem0', sans;">p</p></div>
+                                <div class="pam prn">
+                                    <textarea id="editor-live-demo" class="editor">(function(p) {
 
-                                <input id="source-0" type="radio" name="demo-0-tab" hidden />
-                                <div class="pam">
-                                    <pre><code id="simple-code" class="language-javascript">var demo = new p.Font({ familyName: 'Dem0' }),
-    glyph_p = demo.addGlyph(new p.Glyph({
-        name: 'p',
-        unicode: 'p',
-        advanceWidth: 450 }));
+var font = new p.Font({
+        familyName: 'Demo',
+        ascender: 800,
+        descender: -100
+    }),
+    a = new p.Glyph({
+        name: 'a',
+        unicode: 'a',
+        advanceWidth: 496
+    }),
+    i = new p.Glyph({
+        name: 'i',
+        unicode: 'i',
+        advanceWidth: 268
+    }),
+    o = new p.Glyph({
+        name: 'o',
+        unicode: 'o',
+        advanceWidth: 536
+    }),
+    shape;
 
-glyph_p.addContour( new p.Path.Rectangle({
-        point: [0, -255],
-        size: [100, 800]
-    }));
-glyph_p.addContour( new p.Path.Ellipse({
-        point: [50, 0],
-        size: [400, 550]
-    }));
-glyph_p.addContour( new p.Path.Ellipse({
-        point: [100, 100],
-        size: [250, 350]
-    })).reverse();
+// a contours
+shape = new p.Path.RegularPolygon({
+    center: [268, 124],
+    sides: 3,
+    radius: 248
+});
+shape.rotate(180, [268, 124]);
+shape.scale(1, 1.4, [268, 0]);
+a.addContour(shape);
 
-demo.updateOTCommands()
-    .addToFonts();</code></pre>
+// i contours
+shape = new p.Path.Rectangle({
+    point: [60, 0],
+    size: [140, 500]
+});
+i.addContour(shape);
+
+// o contours
+shape = p.Path.Ellipse({
+    point: [50, 0],
+    size: [436, 510]
+});
+o.addContour(shape);
+
+font.addGlyphs([ a, i, o ]);
+font.updateOTCommands()
+    .addToFonts();
+
+})(plumin.paper);</textarea>
+                                    <canvas id="hidden-canvas" width="1024" height="1024" style="display: none;" />
                                 </div>
                             </div>
                         </form>
 
+                        <div id="titletext" class="w100 medium-w50 large-w50 txtcenter mauto">
+                            <div class="mtl medium-man large-man">
+                                <h1 id="run-live-demo" class="inbl tsb20 pam pts" onclick="runLiveDemo(event);">▶ Create a font</h1>
+                                <p class="white mbm">… to change all "a", "i", "o" on this page.</p>
+                                <div class="social-like">
+                                    <iframe class="gh-star" src="https://ghbtns.com/github-btn.html?user=byte-foundry&repo=plumin.js&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="prototypoApp">Tweet</a>
+                                    <script>
+                                        /* jshint ignore:start */
+                                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                                        /* jshint ignore:end */
+                                    </script>
+                                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div><!-- .flex -->
                 </div><!-- .wrapper.center -->
@@ -145,54 +162,54 @@ demo.updateOTCommands()
                                 <div class="pam txtcenter">
                                     <p class="result inbl" style="font-family: 'Dem1', sans;">A</p>
                                     <div style="position: absolute; left: 0; right: 0; bottom: 30px;">
-                                        <button id="flake" class="btn">Draw me a flake!</button>
+                                        <button id="flake" class="btn" onclick="drawFlake(event);">Draw me a flake!</button>
                                     </div>
                                 </div>
 
                                 <input id="source-1" type="radio" name="demo-1-tab" hidden/>
-                                <div class="pam">
-                                    <pre><code class="language-javascript">var demo = new p.Font({
+                                <div class="plm">
+                                    <textarea class="editor">(function(p) {
+
+var demo = new p.Font({
         familyName: 'Dem1',
         ascender: 500 }),
-    glyph_A = demo.addGlyph(new p.Glyph({
+    glyph = demo.addGlyph(new p.Glyph({
         name: 'A', unicode: 'A',
         advanceWidth: 500 }));
 
-(window.flake = function() {
-  glyph_A.contours = [];
-  glyph_A.addContour(new p.Path.Star({
+glyph.contours = [];
+glyph.addContour(new p.Path.Star({
     center: [250, 250],
     points: 3 + ~~( Math.random() * 8 ),
     radius1: 150 + ( Math.random() * 100 ),
     radius2: 20 + ( Math.random() * 100 )
-  })).simplify( - Math.random() * 10 );
+})).simplify( - Math.random() * 10 );
 
-  demo.updateOTCommands()
+demo.updateOTCommands()
     .addToFonts();
-})();</code></pre>
+
+})(plumin.paper);</textarea>
                                 </div>
                             </div>
                         </form>
 
                         <div class="w100 large-w50 pam">
-                            <h2 class="txtcenter large-txtleft">What is Plumin.js?</h2>
+                            <h2 class="txtcenter large-txtleft">Meet Plumin.js</h2>
                             <div class="grey50 justify center large-left">
                                 <p class="mbs">
-                                    It's a tool to <b>create and manipulate fonts using javascript</b>.
+                                    Manipulating fonts with code has enabled designers to create
+                                    <a href="https://www.scribbletone.com/typefaces/ff-chartwell" target="_blank">new</a>
+                                    <a href="http://code.andreaskoller.com/libraries/fontastic/#examples" target="_blank">kinds</a>
+                                    <a href="http://www.mauvetype.com/" target="_blank">of</a>
+                                    <a href="http://panorama.productiontype.com/" target="_blank">typefaces</a>,
+                                    increase their quality, and automate repetitive tasks.
                                 </p>
                                 <p class="mbs">
-                                    We hope that the interactive, connected, hackable nature of the web
-                                    will bring more type-design enthusiasts to font-scripting,
-                                    while enabling new ways to design and use fonts.
+                                    Plumin.js allows to <strong>create and manipulate fonts using javascript</strong>.
                                 </p>
                                 <p class="mbs">
-                                    If you're into analogies and technical details, it intends to be an alternative
-                                    to <a href="http://robofab.org/" target="_blank">RoboFab</a>:
-                                    it's a <b>font-oriented 2D API and scene-graph with OpenType support</b>.
-                                    It's built on top of <a href="http://paperjs.org" target="_blank">paper.js</a>
-                                    and <a href="https://github.com/nodebox/opentype.js" target="_blank">opentype.js</a>.
-                                    It can run in the browser (in a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank">WebWorker</a>
-                                    for optimal performances) or in <a href="http://nodejs.org/" target="_blank">node.js</a>.
+                                    Now all you need to start <i>hacking fonts</i> is a browser, and the magic
+                                    can happen live while it's being used!
                                 </p>
                             </div>
                         </div>
@@ -234,8 +251,10 @@ demo.updateOTCommands()
                                 </div>
 
                                 <input id="source-2" type="radio" name="demo-2-tab" hidden/>
-                                <div class="pam">
-                                    <pre><code class="language-javascript" id="interpolate-code">var demo = new p.Font({ familyName: 'Dem2' }),
+                                <div class="plm">
+                                    <textarea class="editor">(function(p) {
+
+var demo = new p.Font({ familyName: 'Dem2' }),
     coef = $('#interpolate-slider').val();
 
 // This is a simplified version of the
@@ -245,7 +264,8 @@ demo.interpolate( font0, font1, coef );
 
 demo.updateOTCommands()
     .addToFonts();
-</code></pre>
+
+})(plumin.paper);</textarea>
                                 </div>
                             </div>
                         </form>
@@ -450,11 +470,12 @@ demo.updateOTCommands()
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/prism/prism.js"></script>
         <script src="bower_components/plumin.js/dist/plumin.js"></script>
         <script src="bower_components/skrollr/src/skrollr.js"></script>
+        <script src="bower_components/codemirror/lib/codemirror.js"></script>
+        <script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+        <script src="bower_components/codemirror/addon/edit/closebrackets.js"></script>
         <!-- endbower -->
-        <script src="bower_components/prism/components/prism-bash.js"></script>
         <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
