@@ -28,8 +28,9 @@
         CodeMirror.fromTextArea( this, {
             readOnly: 'nocursor'
 
-        }).setSize('1OO%', 270);
+        }).setSize(this.parentNode.parentNode.clientWidth - 20, 280);
     });
+    $('form input[type="radio"]:first-of-type').attr('checked', 'checked');
 
     window.runLiveDemo = function(event) {
         /*jslint evil: true */
@@ -79,8 +80,8 @@
 
         currentSectionId = sectionId;
 
-        $('#menu-indicator .left').css( 'width', middle );
-        $('#menu-indicator .right').css( 'width', totalWidth - middle );
+        $('#menu-indicator .left').css( 'width', Math.floor(middle) );
+        $('#menu-indicator .right').css( 'width', Math.floor(totalWidth - middle) );
         $('.nav-active').removeClass('nav-active');
         $('#header a[href=' + sectionId + ']').addClass('nav-active');
     }
