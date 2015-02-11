@@ -48,6 +48,11 @@ img {
     margin: 0;
 }
 
+input,
+img {
+    font-family: sans-serif !important;
+}
+
 $gutter: 20px;
 .flex {
     flex-wrap: wrap;
@@ -98,6 +103,10 @@ input[name$="tab"]:checked + * {
         width: 33%;
         max-width: 150px;
         margin: 0 auto;
+    }
+
+    .clearfix {
+        font-family: sans-serif;
     }
 }
 
