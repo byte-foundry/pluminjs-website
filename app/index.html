@@ -89,7 +89,7 @@ var font = new p.Font({
     }),
     shape;
 
-// a contours
+// a contour
 shape = new p.Path.RegularPolygon({
     center: [268, 124],
     sides: 3,
@@ -99,15 +99,15 @@ shape.rotate(180, [268, 124]);
 shape.scale(1, 1.4, [268, 0]);
 a.addContour(shape);
 
-// i contours
+// i contour
 shape = new p.Path.Rectangle({
     point: [60, 0],
     size: [140, 500]
 });
 i.addContour(shape);
 
-// o contours
-shape = p.Path.Ellipse({
+// o contour
+shape = new p.Path.Ellipse({
     point: [50, 0],
     size: [436, 510]
 });
@@ -286,7 +286,7 @@ demo.updateOTCommands()
                     <div class="col mw944p rounded bgwhite bsb20 bog10 pam">
                         <h3>Getting started</h3>
                         <p class="small">
-                            Try Plumin.js <a href="http://plnkr.co/edit/gist:6fcfaa9c968fd6392fb3?p=preview" target="_blank">in your browser</a>,
+                            Try Plumin.js <a href="http://jsfiddle.net/gh/gist/library/pure/d05d597a69e6569a3875/" target="_blank">in your browser</a>,
                             then <a href="https://github.com/byte-foundry/plumin.js/archive/master.zip" target="_blank">download it</a>
                             or install it using <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank">NPM</a>.
                         </p>
