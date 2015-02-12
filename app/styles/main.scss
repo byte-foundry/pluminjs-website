@@ -49,9 +49,11 @@ img {
 }
 
 input,
-img {
+img,
+.sans-serif {
     font-family: sans-serif !important;
 }
+
 
 $gutter: 20px;
 .flex {
