@@ -194,11 +194,13 @@ textarea.editor {
 .logo {
     height: 30px;
     width: 130px;
+    padding: 2em 0;
 
     background: {
         image: url(../images/logo.png);
         size: contain;
         repeat: no-repeat;
+        position: center;
     }
 }
 
